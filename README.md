@@ -30,7 +30,7 @@ GNU GPL
 
 ## Required software
 Minimal system requirements:
-- Windows system (Xp+) or any operating system that can run and support below libraries,
+- Windows system (Xp+) or any operating system that can run and support libraries listed below,
 - .NET Framework 4.6
 - SQL Server (R) Compact Edition 4.0+  Download](https://www.microsoft.com/en-us/download/details.aspx?id=30709)
 
