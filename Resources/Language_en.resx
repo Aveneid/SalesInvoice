@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the Typeconverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="IDatabaseHelper.con1" type="System.Drawing.icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that DatabaseHelper.contain simple 
+    name/value pairs.
+    
+    Each data row DatabaseHelper.contains a name, and value. The row also DatabaseHelper.contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value DatabaseHelper.conversion through the Typeconverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.Typeconverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lbAccountNO" xml:space="preserve">
+    <value>Account number</value>
+  </data>
+  <data name="lbAddCategory" xml:space="preserve">
+    <value>Add category</value>
+  </data>
+  <data name="lbCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="lbAddClient" xml:space="preserve">
+    <value>Add client</value>
+  </data>
+  <data name="lbAddItem" xml:space="preserve">
+    <value>Add item</value>
+  </data>
+  <data name="lbAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="lbAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lbAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="lbApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="lbAreYouSure" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="lbBankAddress" xml:space="preserve">
+    <value>Bank address</value>
+  </data>
+  <data name="lbBankDetails" xml:space="preserve">
+    <value>Bank details</value>
+  </data>
+  <data name="lbBankTransfer" xml:space="preserve">
+    <value>Bank transfer</value>
+  </data>
+  <data name="lbCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="lbCannotUndone" xml:space="preserve">
+    <value>This cannot be undone!</value>
+  </data>
+  <data name="lbCash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="lbCategories" xml:space="preserve">
+    <value>Items categories</value>
+  </data>
+  <data name="lbCenter" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="lbCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="lbCleaning" xml:space="preserve">
+    <value>Cleaning</value>
+  </data>
+  <data name="lbClient" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="lbClients" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="lbClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="lbCode" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="lbCost" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="lbCreate" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="lbCreateDB" xml:space="preserve">
+    <value>Create database</value>
+  </data>
+  <data name="lbCreateTask" xml:space="preserve">
+    <value>Create task</value>
+  </data>
+  <data name="lbDatabase" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="lbDataFromCEIDG" xml:space="preserve">
+    <value>Download data from CEIDG</value>
+  </data>
+  <data name="lbDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="lbDeleteDB" xml:space="preserve">
+    <value>Delete database</value>
+  </data>
+  <data name="lbEnableScannerService" xml:space="preserve">
+    <value>Enable service</value>
+  </data>
+  <data name="lbExport" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="lbExportDB" xml:space="preserve">
+    <value>Export database</value>
+  </data>
+  <data name="lbExtras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="lbGenerate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="lbHeaderText" xml:space="preserve">
+    <value>Header text</value>
+  </data>
+  <data name="lbID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="lbImport" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="lbImportDB" xml:space="preserve">
+    <value>Import database</value>
+  </data>
+  <data name="lbInfo" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="lbItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="lbItemName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lbItems" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="lbLang" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lbLangEN" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="lbLangPL" xml:space="preserve">
+    <value>Polski</value>
+  </data>
+  <data name="lbLeft" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="lbName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lbNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="lbNewReceipt" xml:space="preserve">
+    <value>New receipt</value>
+  </data>
+  <data name="lbNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="lbOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="lbPaymentMethod" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="lbPESEL" xml:space="preserve">
+    <value>PESEL</value>
+  </data>
+  <data name="lbPhone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="lbPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="lbPrintingWindow" xml:space="preserve">
+    <value>Printing window</value>
+  </data>
+  <data name="lbReceipt" xml:space="preserve">
+    <value>Receipt</value>
+  </data>
+  <data name="lbReceiptNO" xml:space="preserve">
+    <value>Receipt #</value>
+  </data>
+  <data name="lbReceipts" xml:space="preserve">
+    <value>Receipts</value>
+  </data>
+  <data name="lbRight" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="lbSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="lbSelectDB" xml:space="preserve">
+    <value>Choose databse</value>
+  </data>
+  <data name="lbSeller" xml:space="preserve">
+    <value>Seller</value>
+  </data>
+  <data name="lbSellerInfo" xml:space="preserve">
+    <value>Seller info</value>
+  </data>
+  <data name="lbSetDefaultDB" xml:space="preserve">
+    <value>Set database as default</value>
+  </data>
+  <data name="lbSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="lbShowClients" xml:space="preserve">
+    <value>Show clients</value>
+  </data>
+  <data name="lbShowItems" xml:space="preserve">
+    <value>Show items</value>
+  </data>
+  <data name="lbShowReceipts" xml:space="preserve">
+    <value>Show receipts</value>
+  </data>
+  <data name="lbSum" xml:space="preserve">
+    <value>Sum</value>
+  </data>
+  <data name="lbSurname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="lbTextAlign" xml:space="preserve">
+    <value>Text align</value>
+  </data>
+  <data name="lbUnit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="lbYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="lbExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="lbMainTab" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="lbMainTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lbProgramName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgDatabaseHelper.confirmation" xml:space="preserve">
+    <value>DatabaseHelper.confirmation</value>
+  </data>
+  <data name="msgDatabaseCreatedSuccess" xml:space="preserve">
+    <value>Database created successfully!</value>
+  </data>
+  <data name="msgDatabaseInUseError" xml:space="preserve">
+    <value>Cannot delete database that is in use!</value>
+  </data>
+  <data name="msgDatabaseNameExists" xml:space="preserve">
+    <value>Database with that name already exists!</value>
+  </data>
+  <data name="msgGeneralError" xml:space="preserve">
+    <value>An error occured while performing operation</value>
+  </data>
+  <data name="msgSdfError" xml:space="preserve">
+    <value>Database file is corrupted or invalid</value>
+  </data>
+  <data name="msgSureToDeleteX" xml:space="preserve">
+    <value>Do you want to delete  </value>
+  </data>
+  <data name="msgZipError" xml:space="preserve">
+    <value>Zip file is corrupted or invalid</value>
+  </data>
+  <data name="lbIncorrectCategory" xml:space="preserve">
+    <value>Invalid category!</value>
+  </data>
+  <data name="lbEditCategories" xml:space="preserve">
+    <value>Edit categories</value>
+  </data>
+  <data name="lbItemInDb" xml:space="preserve">
+    <value>This item is already in database!</value>
+  </data>
+  <data name="lbItemsInDb" xml:space="preserve">
+    <value>Items in database: </value>
+  </data>
+  <data name="lbNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="lbBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="lbEnd" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="lbFisrtRun" xml:space="preserve">
+    <value>First run</value>
+  </data>
+  <data name="lbWelcome" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="lbIdData" xml:space="preserve">
+    <value>Identification data</value>
+  </data>
+  <data name="lbHeadInfo" xml:space="preserve">
+    <value>Header and footer info</value>
+  </data>
+  <data name="lbBankInfo" xml:space="preserve">
+    <value>Bank details</value>
+  </data>
+  <data name="lbWizardEnd" xml:space="preserve">
+    <value>We can start!</value>
+  </data>
+  <data name="lbHi" xml:space="preserve">
+    <value>Hi!</value>
+  </data>
+  <data name="lbWelcomeInfo" xml:space="preserve">
+    <value>Before we start you have to fill some basic info.
+		It will be quick and easy!</value>
+  </data>
+  <data name="lbIdInfo" xml:space="preserve">
+    <value>This info is required for receipt to generate correctly.
+		Please fill this foGlobals.rm.
+		</value>
+  </data>
+  <data name="lbAddressNo" xml:space="preserve">
+    <value>Building no</value>
+  </data>
+  <data name="lbPostal" xml:space="preserve">
+    <value>Postal code</value>
+  </data>
+  <data name="lbHeadInfoWizard" xml:space="preserve">
+    <value>Header info
+(this info will be in upper left corner of receipt)</value>
+  </data>
+  <data name="lbBankInfoWizard" xml:space="preserve">
+    <value>Here are informations about bank accout, if you
+		will take payment via bank transfer, fill this form,
+		otherwise payment using bank transfer will be locked.
+
+You can change this info in Settings later.</value>
+  </data>
+  <data name="lbWizardEnding" xml:space="preserve">
+    <value>Great! We have DatabaseHelper.configured basic info.
+	Remember, you can change all of this info in Settings
+	later.
+
+	To start using program, press "Finish" button.
+
+		</value>
+  </data>
+  <data name="lbWizardExit" xml:space="preserve">
+    <value>Do you want to end this wizard?</value>
+  </data>
+  <data name="lbEnterAllData" xml:space="preserve">
+    <value>Fill all required fields!</value>
+  </data>
+  <data name="lbWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="msgCategoryDelError" xml:space="preserve">
+    <value>Cannot delete unit that have items!</value>
+  </data>
+  <data name="msgNotRequired" xml:space="preserve">
+    <value>Not required</value>
+  </data>
+  <data name="msgNnotEnoughData" xml:space="preserve">
+    <value>Not enough data</value>
+  </data>
+  <data name="lbRaports" xml:space="preserve">
+    <value>Raports</value>
+  </data>
+  <data name="lbService" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="lbEditUnits" xml:space="preserve">
+    <value>Edit units</value>
+  </data>
+  <data name="lbAddUnits" xml:space="preserve">
+    <value>Add unit</value>
+  </data>
+  <data name="lbIncorrectUnit" xml:space="preserve">
+    <value>Invalid unit!</value>
+  </data>
+  <data name="lbItemDetails" xml:space="preserve">
+    <value>Item details</value>
+  </data>
+  <data name="lbClientDetails" xml:space="preserve">
+    <value>Client details</value>
+  </data>
+  <data name="titleMain" xml:space="preserve">
+    <value>Records of the sales</value>
+  </data>
+  <data name="titleSales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="msgEditOk" xml:space="preserve">
+    <value>Edit completed succesfully!</value>
+  </data>
+  <data name="lbDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="lbDocumentNo" xml:space="preserve">
+    <value>Document number</value>
+  </data>
+  <data name="msgDatabaseError" xml:space="preserve">
+    <value>Database is corrupted or invalid!</value>
+  </data>
+  <data name="lbChoose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="lbDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="lbFooterText" xml:space="preserve">
+    <value>Footer</value>
+  </data>
+  <data name="lbTemplate" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="lbChooseTemplate" xml:space="preserve">
+    <value>Choose template</value>
+  </data>
+  <data name="lbEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="lbEditCategory" xml:space="preserve">
+    <value>Edit item category</value>
+  </data>
+  <data name="lbInRange" xml:space="preserve">
+    <value>From range</value>
+  </data>
+  <data name="lbMonthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="lbPickRange" xml:space="preserve">
+    <value>Pick range</value>
+  </data>
+  <data name="lbGenerating" xml:space="preserve">
+    <value>Generating...</value>
+  </data>
+  <data name="lbPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="lbRaportsRange" xml:space="preserve">
+    <value>Ranged reports</value>
+  </data>
+  <data name="lbRaportsVar" xml:space="preserve">
+    <value>Splitted reports</value>
+  </data>
+  <data name="msgFileError" xml:space="preserve">
+    <value>Cannot perform action on file! Check if you have permissions or if file is locked.</value>
+  </data>
+  <data name="msgAppDatabaseHelper.configError" xml:space="preserve">
+    <value>Application DatabaseHelper.config file is corrupted or not exists. Please reinstall program.</value>
+  </data>
+</root>

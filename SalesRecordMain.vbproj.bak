@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8318B498-67DD-403B-97B4-6B2CD97A4439}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SalesInvoice.My.MyApplication</StartupObject>
+    <RootNamespace>SalesInvoice</RootNamespace>
+    <AssemblyName>SalesInvoice</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>D:\deploy\SalesInvoice\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>SalesInvoice</ProductName>
+    <PublisherName>Bartłomiej Ferenc</PublisherName>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>20</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SalesInvoice.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SalesInvoice.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\hand.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>411C2DB96140C2501C824D627D3039487DECC6E4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SalesRecordMain_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.Ribbon">
+      <HintPath>.\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Client\ClientDetails.Designer.vb">
+      <DependentUpon>ClientDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Client\ClientDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Client\ClientList.Designer.vb">
+      <DependentUpon>ClientList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Client\ClientList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\AddCategoriesWindow.Designer.vb">
+      <DependentUpon>AddCategoriesWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\AddCategoriesWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\AddItemWindow.Designer.vb">
+      <DependentUpon>AddItemWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\AddItemWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Forms\Databases\ChooseDBWindow.Designer.vb">
+      <DependentUpon>ChooseDBWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Databases\ChooseDBWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Databases\CreateDBWindow.Designer.vb">
+      <DependentUpon>CreateDBWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Databases\CreateDBWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Client\DownloadDataFromGUS.Designer.vb">
+      <DependentUpon>DownloadDataFromGUS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Client\DownloadDataFromGUS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\AddUnitsWindow.Designer.vb">
+      <DependentUpon>AddUnitsWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\AddUnitsWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\EditItemCategory.Designer.vb">
+      <DependentUpon>EditItemCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\EditItemCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\ItemDetails.Designer.vb">
+      <DependentUpon>ItemDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\ItemDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Options\OptionsAndDatabaseWindow.Designer.vb">
+      <DependentUpon>OptionsAndDatabaseWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Options\OptionsAndDatabaseWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Options\Informations.Designer.vb">
+      <DependentUpon>Informations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Options\Informations.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\ChooseReceiptTemplate.Designer.vb">
+      <DependentUpon>ChooseReceiptTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\ChooseReceiptTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.vb">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Client\AddClientWindow.Designer.vb">
+      <DependentUpon>AddClientWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Client\AddClientWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\AddReceiptWindow.Designer.vb">
+      <DependentUpon>AddReceiptWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\AddReceiptWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\Receipt\GenerateReceipt.vb" />
+    <Compile Include="Forms\Receipt\PrintingWindow.Designer.vb">
+      <DependentUpon>PrintingWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\PrintingWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\CustomReportGenerator.Designer.vb">
+      <DependentUpon>CustomReportGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\CustomReportGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\ReportsRange.Designer.vb">
+      <DependentUpon>ReportsRange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\ReportsRange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Database.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Language_en.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language_en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Language_pl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language_pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="Utils\DatabaseHelper.vb" />
+    <Compile Include="Utils\Globals.vb" />
+    <Compile Include="Wizard\FirstRunWizard.Designer.vb">
+      <DependentUpon>FirstRunWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FirstRunWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\temp.Designer.vb">
+      <DependentUpon>temp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\temp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Client\AddClientWindow.en.resx">
+      <DependentUpon>AddClientWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\AddClientWindow.pl.resx">
+      <DependentUpon>AddClientWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\ClientDetails.en.resx">
+      <DependentUpon>ClientDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\ClientDetails.pl.resx">
+      <DependentUpon>ClientDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\ClientDetails.resx">
+      <DependentUpon>ClientDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\ClientList.resx">
+      <DependentUpon>ClientList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\DownloadDataFromGUS.resx">
+      <DependentUpon>DownloadDataFromGUS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Databases\ChooseDBWindow.pl.resx">
+      <DependentUpon>ChooseDBWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Databases\CreateDBWindow.pl.resx">
+      <DependentUpon>CreateDBWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\AddCategoriesWindow.pl.resx">
+      <DependentUpon>AddCategoriesWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\AddCategoriesWindow.resx">
+      <DependentUpon>AddCategoriesWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\AddItemWindow.en.resx">
+      <DependentUpon>AddItemWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\AddItemWindow.pl.resx">
+      <DependentUpon>AddItemWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\AddItemWindow.resx">
+      <DependentUpon>AddItemWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Databases\ChooseDBWindow.resx">
+      <DependentUpon>ChooseDBWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Databases\CreateDBWindow.resx">
+      <DependentUpon>CreateDBWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\AddUnitsWindow.resx">
+      <DependentUpon>AddUnitsWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\EditItemCategory.resx">
+      <DependentUpon>EditItemCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\ItemDetails.af.resx">
+      <DependentUpon>ItemDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\ItemDetails.en.resx">
+      <DependentUpon>ItemDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\ItemDetails.pl.resx">
+      <DependentUpon>ItemDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\ItemDetails.resx">
+      <DependentUpon>ItemDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.en.resx">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.pl.resx">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Options\Informations.pl.resx">
+      <DependentUpon>Informations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Options\OptionsAndDatabaseWindow.en.resx">
+      <DependentUpon>OptionsAndDatabaseWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Options\OptionsAndDatabaseWindow.pl.resx">
+      <DependentUpon>OptionsAndDatabaseWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Options\OptionsAndDatabaseWindow.resx">
+      <DependentUpon>OptionsAndDatabaseWindow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\AddClientWindow.resx">
+      <DependentUpon>AddClientWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\AddReceiptWindow.resx">
+      <DependentUpon>AddReceiptWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Options\Informations.resx">
+      <DependentUpon>Informations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\ChooseReceiptTemplate.resx">
+      <DependentUpon>ChooseReceiptTemplate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\PrintingWindow.resx">
+      <DependentUpon>PrintingWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\CustomReportGenerator.resx">
+      <DependentUpon>CustomReportGenerator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\ReportsRange.resx">
+      <DependentUpon>ReportsRange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Database.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Database.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language_en.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language_en.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language_pl.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language_pl.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FirstRunWizard.pl.resx">
+      <DependentUpon>FirstRunWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FirstRunWizard.resx">
+      <DependentUpon>FirstRunWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\temp.resx">
+      <DependentUpon>temp.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Resources\CABProject_5818_32x.png" />
+    <Content Include="Resources\GlobalApplicationClass%28asax%29_443_32x.png" />
+    <None Include="Resources\Image1.png" />
+    <Content Include="Resources\IntelliTrace_48x.png" />
+    <Content Include="Resources\RSReport_32xLG.png" />
+    <Content Include="Resources\template1.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Textfile_818_32x.png" />
+    <Content Include="Resources\version.rc" />
+    <Content Include="Resources\wizard.png" />
+    <None Include="Resources\wizard1.png" />
+    <None Include="Resources\Print_110091.png" />
+    <None Include="Resources\UserInterfaceEditor_5845_32x.png" />
+    <None Include="Resources\user_32xLG.png" />
+    <None Include="Resources\manifest_32xLG.png" />
+    <None Include="Resources\AddComponent_367.png" />
+    <None Include="Resources\asset_treeView_24x24_on.png" />
+    <None Include="Resources\build_Selection_32xLG.png" />
+    <None Include="Resources\database_32xLG.png" />
+    <Content Include="Resources\edit.png" />
+    <None Include="Resources\gear_32xLG.png" />
+    <None Include="Resources\gear_32xLG.ico" />
+    <Content Include="Resources\hand.ico" />
+    <None Include="Resources\Print_11009.png" />
+    <None Include="Resources\sun.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\avatar.ico" />
+    <None Include="Resources\bill.ico" />
+    <None Include="Resources\bill.png" />
+    <None Include="Resources\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="af\SalesInvoice.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="en\SalesInvoice.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="pl\SalesInvoice.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.Barcode">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.Common.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.Doc.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.DocViewer.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.Pdf.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.PdfViewer.Forms.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.Presentation">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.Presentation.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.XLS">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Spire.XLS.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Data.SqlServerCe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Windows.Controls.Ribbon">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
+    <PackageReference Include="FreeSpire.Office">
+      <Version>4.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="Ionic.Zip">
+      <Version>1.9.1.8</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.31</Version>
+    </PackageReference>
+    <PackageReference Include="Orc.Controls">
+      <Version>3.2.23</Version>
+    </PackageReference>
+    <PackageReference Include="Orc.SystemInfo">
+      <Version>3.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

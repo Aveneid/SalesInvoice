@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 255</value>
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Headline_info.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 37</value>
+  </data>
+  <data name="Headline_info.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 139</value>
+  </data>
+  <data name="Headline_info.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Headline_info.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;Headline_info.Name" xml:space="preserve">
+    <value>Headline_info</value>
+  </data>
+  <data name="&gt;&gt;Headline_info.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Headline_info.Parent" xml:space="preserve">
+    <value>tbHeader</value>
+  </data>
+  <data name="&gt;&gt;Headline_info.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbHeaderText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbHeaderText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 21</value>
+  </data>
+  <data name="lbHeaderText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="lbHeaderText.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lbHeaderText.Text" xml:space="preserve">
+    <value>Info:</value>
+  </data>
+  <data name="&gt;&gt;lbHeaderText.Name" xml:space="preserve">
+    <value>lbHeaderText</value>
+  </data>
+  <data name="&gt;&gt;lbHeaderText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbHeaderText.Parent" xml:space="preserve">
+    <value>tbHeader</value>
+  </data>
+  <data name="&gt;&gt;lbHeaderText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tbHeader.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tbHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 223</value>
+  </data>
+  <data name="tbHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tbHeader.Text" xml:space="preserve">
+    <value>Header text</value>
+  </data>
+  <data name="&gt;&gt;tbHeader.Name" xml:space="preserve">
+    <value>tbHeader</value>
+  </data>
+  <data name="&gt;&gt;tbHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbHeader.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;tbHeader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbFooterText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbFooterText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 18</value>
+  </data>
+  <data name="lbFooterText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lbFooterText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbFooterText.Text" xml:space="preserve">
+    <value>Label8</value>
+  </data>
+  <data name="&gt;&gt;lbFooterText.Name" xml:space="preserve">
+    <value>lbFooterText</value>
+  </data>
+  <data name="&gt;&gt;lbFooterText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbFooterText.Parent" xml:space="preserve">
+    <value>tbFooter</value>
+  </data>
+  <data name="&gt;&gt;lbFooterText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rtbFooterText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 45</value>
+  </data>
+  <data name="rtbFooterText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 139</value>
+  </data>
+  <data name="rtbFooterText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbFooterText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbFooterText.Name" xml:space="preserve">
+    <value>rtbFooterText</value>
+  </data>
+  <data name="&gt;&gt;rtbFooterText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbFooterText.Parent" xml:space="preserve">
+    <value>tbFooter</value>
+  </data>
+  <data name="&gt;&gt;rtbFooterText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbFooter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tbFooter.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tbFooter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 223</value>
+  </data>
+  <data name="tbFooter.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbFooter.Text" xml:space="preserve">
+    <value>TabPage4</value>
+  </data>
+  <data name="&gt;&gt;tbFooter.Name" xml:space="preserve">
+    <value>tbFooter</value>
+  </data>
+  <data name="&gt;&gt;tbFooter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbFooter.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;tbFooter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbPostal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbPostal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 143</value>
+  </data>
+  <data name="lbPostal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="lbPostal.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="lbPostal.Text" xml:space="preserve">
+    <value>Postal code</value>
+  </data>
+  <data name="&gt;&gt;lbPostal.Name" xml:space="preserve">
+    <value>lbPostal</value>
+  </data>
+  <data name="&gt;&gt;lbPostal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbPostal.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;lbPostal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Address_4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 140</value>
+  </data>
+  <data name="Address_4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 20</value>
+  </data>
+  <data name="Address_4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Address_4.Name" xml:space="preserve">
+    <value>Address_4</value>
+  </data>
+  <data name="&gt;&gt;Address_4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Address_4.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;Address_4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbAddressNo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbAddressNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 91</value>
+  </data>
+  <data name="lbAddressNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="lbAddressNo.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="lbAddressNo.Text" xml:space="preserve">
+    <value>Building no / flat</value>
+  </data>
+  <data name="&gt;&gt;lbAddressNo.Name" xml:space="preserve">
+    <value>lbAddressNo</value>
+  </data>
+  <data name="&gt;&gt;lbAddressNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAddressNo.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;lbAddressNo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Address_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 88</value>
+  </data>
+  <data name="Address_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 20</value>
+  </data>
+  <data name="Address_2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Address_2.Name" xml:space="preserve">
+    <value>Address_2</value>
+  </data>
+  <data name="&gt;&gt;Address_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Address_2.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;Address_2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbCity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 117</value>
+  </data>
+  <data name="lbCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="lbCity.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="lbCity.Text" xml:space="preserve">
+    <value>City: </value>
+  </data>
+  <data name="&gt;&gt;lbCity.Name" xml:space="preserve">
+    <value>lbCity</value>
+  </data>
+  <data name="&gt;&gt;lbCity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCity.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;lbCity.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Address_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 114</value>
+  </data>
+  <data name="Address_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 20</value>
+  </data>
+  <data name="Address_3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Address_3.Name" xml:space="preserve">
+    <value>Address_3</value>
+  </data>
+  <data name="&gt;&gt;Address_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Address_3.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;Address_3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Pesel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 192</value>
+  </data>
+  <data name="Pesel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 20</value>
+  </data>
+  <data name="Pesel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;Pesel.Name" xml:space="preserve">
+    <value>Pesel</value>
+  </data>
+  <data name="&gt;&gt;Pesel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Pesel.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;Pesel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbPhone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 169</value>
+  </data>
+  <data name="lbPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="lbPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="lbPhone.Text" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="&gt;&gt;lbPhone.Name" xml:space="preserve">
+    <value>lbPhone</value>
+  </data>
+  <data name="&gt;&gt;lbPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbPhone.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;lbPhone.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbAddress.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 65</value>
+  </data>
+  <data name="lbAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="lbAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="lbAddress.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="&gt;&gt;lbAddress.Name" xml:space="preserve">
+    <value>lbAddress</value>
+  </data>
+  <data name="&gt;&gt;lbAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAddress.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;lbAddress.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lbPesel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbPesel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 195</value>
+  </data>
+  <data name="lbPesel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="lbPesel.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="lbPesel.Text" xml:space="preserve">
+    <value>PESEL (*)</value>
+  </data>
+  <data name="&gt;&gt;lbPesel.Name" xml:space="preserve">
+    <value>lbPesel</value>
+  </data>
+  <data name="&gt;&gt;lbPesel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbPesel.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;lbPesel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Phone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 166</value>
+  </data>
+  <data name="Phone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 20</value>
+  </data>
+  <data name="Phone.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;Phone.Name" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="&gt;&gt;Phone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Phone.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;Phone.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="rtbSellerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 11</value>
+  </data>
+  <data name="rtbSellerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 45</value>
+  </data>
+  <data name="rtbSellerName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbSellerName.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbSellerName.Name" xml:space="preserve">
+    <value>rtbSellerName</value>
+  </data>
+  <data name="&gt;&gt;rtbSellerName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbSellerName.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;rtbSellerName.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Address_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 62</value>
+  </data>
+  <data name="Address_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 20</value>
+  </data>
+  <data name="Address_1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Address_1.Name" xml:space="preserve">
+    <value>Address_1</value>
+  </data>
+  <data name="&gt;&gt;Address_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Address_1.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;Address_1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lbName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 14</value>
+  </data>
+  <data name="lbName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="lbName.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="lbName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;lbName.Name" xml:space="preserve">
+    <value>lbName</value>
+  </data>
+  <data name="&gt;&gt;lbName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbName.Parent" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;lbName.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="tbSeller.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tbSeller.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 223</value>
+  </data>
+  <data name="tbSeller.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tbSeller.Text" xml:space="preserve">
+    <value>Seller info</value>
+  </data>
+  <data name="&gt;&gt;tbSeller.Name" xml:space="preserve">
+    <value>tbSeller</value>
+  </data>
+  <data name="&gt;&gt;tbSeller.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbSeller.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;tbSeller.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BankAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 97</value>
+  </data>
+  <data name="BankAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 20</value>
+  </data>
+  <data name="BankAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;BankAddress.Name" xml:space="preserve">
+    <value>BankAddress</value>
+  </data>
+  <data name="&gt;&gt;BankAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BankAddress.Parent" xml:space="preserve">
+    <value>tbBank</value>
+  </data>
+  <data name="&gt;&gt;BankAddress.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbAccountNo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbAccountNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 29</value>
+  </data>
+  <data name="lbAccountNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lbAccountNo.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="lbAccountNo.Text" xml:space="preserve">
+    <value>Numer konta</value>
+  </data>
+  <data name="&gt;&gt;lbAccountNo.Name" xml:space="preserve">
+    <value>lbAccountNo</value>
+  </data>
+  <data name="&gt;&gt;lbAccountNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAccountNo.Parent" xml:space="preserve">
+    <value>tbBank</value>
+  </data>
+  <data name="&gt;&gt;lbAccountNo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbBankAddress.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbBankAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 81</value>
+  </data>
+  <data name="lbBankAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="lbBankAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="lbBankAddress.Text" xml:space="preserve">
+    <value>Adres banku</value>
+  </data>
+  <data name="&gt;&gt;lbBankAddress.Name" xml:space="preserve">
+    <value>lbBankAddress</value>
+  </data>
+  <data name="&gt;&gt;lbBankAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbBankAddress.Parent" xml:space="preserve">
+    <value>tbBank</value>
+  </data>
+  <data name="&gt;&gt;lbBankAddress.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AccountNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 45</value>
+  </data>
+  <data name="AccountNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 20</value>
+  </data>
+  <data name="AccountNo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AccountNo.Name" xml:space="preserve">
+    <value>AccountNo</value>
+  </data>
+  <data name="&gt;&gt;AccountNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AccountNo.Parent" xml:space="preserve">
+    <value>tbBank</value>
+  </data>
+  <data name="&gt;&gt;AccountNo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbBank.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tbBank.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 223</value>
+  </data>
+  <data name="tbBank.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tbBank.Text" xml:space="preserve">
+    <value>Bank details</value>
+  </data>
+  <data name="&gt;&gt;tbBank.Name" xml:space="preserve">
+    <value>tbBank</value>
+  </data>
+  <data name="&gt;&gt;tbBank.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbBank.Parent" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;tbBank.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 249</value>
+  </data>
+  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
+    <value>TabControl1</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>359, 285</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>316, 322</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="&gt;&gt;ToolTip1.Name" xml:space="preserve">
+    <value>ToolTip1</value>
+  </data>
+  <data name="&gt;&gt;ToolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
