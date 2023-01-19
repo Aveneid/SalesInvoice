@@ -19,7 +19,7 @@ Public Class AddItemWindow
                     'If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
                     'DatabaseHelper.cmd.ExecuteNonQuery()
 
-                    Using ird As SqlCeDataReader = DatabaseHelper.executeSQLQuery("Select top 1 id from Categories where name = '" & ITEMCATEGORY.SelectedItem & "'")
+                    Using ird As SqlCeDataReader = Globals.DB.executeQuery("SELECT top 1 id FROM categories WHERE name = '" & ITEMCATEGORY.SelectedItem & "'")
                         While ird.Read()
                             cat_id = ird.GetValue(0)
                         End While
@@ -29,7 +29,7 @@ Public Class AddItemWindow
                     'If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
                     'DatabaseHelper.cmd.ExecuteNonQuery()
 
-                    Using ird As SqlCeDataReader = DatabaseHelper.executeSQLQuery("select id from Units where name = '" & UNITCOMBO.SelectedItem & "'")
+                    Using ird As SqlCeDataReader = Globals.DB.executeQuery("SELECT id FROM units WHERE name = '" & UNITCOMBO.SelectedItem & "'")
                         While ird.Read()
                             unit_id = ird.GetValue(0)
                         End While
@@ -44,11 +44,11 @@ Public Class AddItemWindow
                     ' ITEMNAME.Text & "'," & ITEMPRICE.Text & "," & cat_id & "," & unit_id & ")", DatabaseHelper.con)
                     ' If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
 
-                    DatabaseHelper.executeSQLNonQuery("INSERT Items(name,price,category,unit) values('" & ITEMNAME.Text & "'," & ITEMPRICE.Text & "," & cat_id & "," & unit_id & ")")
+                    Globals.DB.executeNonQuery("INSERT Items(name,price,category,unit) VALUES('" & ITEMNAME.Text & "'," & ITEMPRICE.Text & "," & cat_id & "," & unit_id & ")")
 
 
                     'DatabaseHelper.cmd = New SqlCeCommand("select count(*) as c from Items", DatabaseHelper.con)
-                    Using rd As SqlCeDataReader = DatabaseHelper.executeSQLQuery("select count(*) as c from Items")
+                    Using rd As SqlCeDataReader = Globals.DB.executeQuery("SELECT count(*) FROM Items")
                         rd.Read()
                         If rd.GetValue(0).ToString IsNot "0" Then
                             ToolStripStatusLabel1.Text = Globals.rm.GetString("lbItemsInDb") & rd.GetValue(0)
@@ -59,7 +59,6 @@ Public Class AddItemWindow
                     ITEMNAME.Text = Nothing
                     ITEMPRICE.Text = Nothing
                     ITEMCATEGORY.SelectedItem = "- - - - -"
-                    DatabaseHelper.con.Close()
                 End If
             End If
         End If
@@ -79,10 +78,8 @@ Public Class AddItemWindow
         ITEMNAME.Focus()
         ITEMCATEGORY.Items.Clear()
         UNITCOMBO.Items.Clear()
-        DatabaseHelper.cmd = New SqlCeCommand("select name as c from Categories", DatabaseHelper.con)
-        If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-        DatabaseHelper.cmd.ExecuteNonQuery()
-        Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+
+        Using rd As SqlCeDataReader = Globals.DB.executeQuery("SELECT name FROM Categories")
             While rd.Read()
                 ITEMCATEGORY.Items.Add(rd.GetValue(0))
             End While
@@ -91,10 +88,8 @@ Public Class AddItemWindow
         ITEMCATEGORY.SelectedItem = "- - - - -"
         ITEMCATEGORY.Items.Add(Globals.rm.GetString("lbEditCategories"))
 
-        DatabaseHelper.cmd = New SqlCeCommand("select name from Units", DatabaseHelper.con)
-        If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-        DatabaseHelper.cmd.ExecuteNonQuery()
-        Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+
+        Using rd As SqlCeDataReader = Globals.DB.executeQuery("SELECT name FROM Units")
             While rd.Read()
                 UNITCOMBO.Items.Add(rd.GetValue(0))
             End While
@@ -103,8 +98,8 @@ Public Class AddItemWindow
         UNITCOMBO.SelectedItem = "- - - - -"
         UNITCOMBO.Items.Add(Globals.rm.GetString("lbEditUnits"))
 
-        DatabaseHelper.cmd = New SqlCeCommand("select count(*) as c from Items", DatabaseHelper.con)
-        Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+
+        Using rd As SqlCeDataReader = Globals.DB.executeQuery("SELECT count(*) FROM Items")
             rd.Read()
             If rd.GetValue(0).ToString IsNot "0" Then
                 ToolStripStatusLabel1.Text = Globals.rm.GetString("lbItemsInDb") & rd.GetValue(0)
@@ -139,10 +134,7 @@ Public Class AddItemWindow
             If AddCategoriesWindow.ShowDialog() Then
                 ITEMCATEGORY.Items.Clear()
 
-                DatabaseHelper.cmd = New SqlCeCommand("select name as c from Categories", DatabaseHelper.con)
-                If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-                DatabaseHelper.cmd.ExecuteNonQuery()
-                Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+                Using rd As SqlCeDataReader = Globals.DB.executeQuery("SELECT name FROM Categories")
                     While rd.Read()
                         ITEMCATEGORY.Items.Add(rd.GetValue(0))
                     End While
@@ -166,10 +158,8 @@ Public Class AddItemWindow
             If AddUnitsWindow.ShowDialog() Then
                 UNITCOMBO.Items.Clear()
 
-                DatabaseHelper.cmd = New SqlCeCommand("select name as c from Units", DatabaseHelper.con)
-                If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-                DatabaseHelper.cmd.ExecuteNonQuery()
-                Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+
+                Using rd As SqlCeDataReader = Globals.DB.executeQuery("SELECT name FROM Units")
                     While rd.Read()
                         UNITCOMBO.Items.Add(rd.GetValue(0))
                     End While

@@ -4,21 +4,17 @@ Public Class AddClientWindow
     Private Sub AddClientToDatabase(sender As Object, e As EventArgs) Handles btnAdd.Click
         If NAMEDATA.Text.Length > 0 And ADDRESSDATA.Text.Length > 0 Then
 
-            If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
+            Globals.DB.cmd = "SELECT * FROM clients WHERE identificator = '" & NIPDATA.Text.Replace("-", "") & "' or name = '" & NAMEDATA.Text & "'"
 
-            DatabaseHelper.cmd = New SqlCeCommand("SELECT * FROM clients WHERE identificator = '" & NIPDATA.Text.Replace("-", "") & "' or name = '" & NAMEDATA.Text & "'", DatabaseHelper.con)
 
-            DatabaseHelper.cmd.ExecuteNonQuery()
-            Dim d As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+            Dim d As SqlCeDataReader = Globals.DB.executeQuery
             If Not d.Read() Then
                 Dim persondata As String = Nothing
                 If PESELRADIO.Checked Then persondata = PESELDATA.Text
                 If NIPRADIO.Checked Then persondata = NIPDATA.Text
                 If NOTHINGRADIO.Checked Then persondata = 0
-                DatabaseHelper.cmd = New SqlCeCommand("INSERT clients(name,phone,identificator,address) values('" & NAMEDATA.Text & "','" & IIf(PHONEDATA.Text.Length < 1, "0", PHONEDATA.Text) & "','" & persondata & "','" & ADDRESSDATA.Text & "');", DatabaseHelper.con)
-                If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-                DatabaseHelper.cmd.ExecuteNonQuery()
-                DatabaseHelper.con.Close()
+                Globals.DB.cmd = "INSERT clients(name,phone,identificator,address) values('" & NAMEDATA.Text & "','" & IIf(PHONEDATA.Text.Length < 1, "0", PHONEDATA.Text) & "','" & persondata & "','" & ADDRESSDATA.Text & "');"
+                Globals.DB.executeNonQuery()
                 Me.Close()
             Else
                 MsgBox("Client already in database!")
@@ -35,7 +31,6 @@ Public Class AddClientWindow
     End Sub
 
     Private Sub FormClosedEvent(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
-        If DatabaseHelper.con.State = ConnectionState.Open Then DatabaseHelper.con.Close()
         Me.Dispose()
         Me.ResetText()
         Me.KeyPreview = False

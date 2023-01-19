@@ -15,7 +15,7 @@ Public Class ChooseDBWindow
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnOk.Click
         If cbSelectDb.SelectedItem IsNot Nothing Then
-            DatabaseHelper.currentDatabase = cbSelectDb.SelectedItem
+            Globals.DB.currentDatabase = cbSelectDb.SelectedItem
             MainWindow.Show()
             Me.Close()
         End If
@@ -43,7 +43,7 @@ Public Class ChooseDBWindow
         End If
         If Globals.asSettings.Settings.Item("autostart_database").Value IsNot "false" Then
             If Globals.fileExists(Application.StartupPath & "\databases\" & Globals.asSettings.Settings.Item("autostart_database").Value) Then
-                DatabaseHelper.currentDatabase = Globals.asSettings.Settings.Item("autostart_database").Value
+                Globals.DB.currentDatabase = Globals.asSettings.Settings.Item("autostart_database").Value
                 MainWindow.Show()
                 Me.Close()
             End If

@@ -143,28 +143,28 @@
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Headline_info.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="rtbHeaderText.Location" type="System.Drawing.Point, System.Drawing">
     <value>37, 37</value>
   </data>
-  <data name="Headline_info.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="rtbHeaderText.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 139</value>
   </data>
-  <data name="Headline_info.TabIndex" type="System.Int32, mscorlib">
+  <data name="rtbHeaderText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Headline_info.Text" xml:space="preserve">
+  <data name="rtbHeaderText.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;Headline_info.Name" xml:space="preserve">
-    <value>Headline_info</value>
+  <data name="&gt;&gt;rtbHeaderText.Name" xml:space="preserve">
+    <value>rtbHeaderText</value>
   </data>
-  <data name="&gt;&gt;Headline_info.Type" xml:space="preserve">
+  <data name="&gt;&gt;rtbHeaderText.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Headline_info.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rtbHeaderText.Parent" xml:space="preserve">
     <value>tbHeader</value>
   </data>
-  <data name="&gt;&gt;Headline_info.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rtbHeaderText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lbHeaderText.AutoSize" type="System.Boolean, mscorlib">
@@ -300,176 +300,56 @@
   <data name="&gt;&gt;tbFooter.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lbPostal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="rtbSellerAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 75</value>
   </data>
-  <data name="lbPostal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 143</value>
+  <data name="rtbSellerAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 58</value>
   </data>
-  <data name="lbPostal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
-  </data>
-  <data name="lbPostal.TabIndex" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="lbPostal.Text" xml:space="preserve">
-    <value>Postal code</value>
-  </data>
-  <data name="&gt;&gt;lbPostal.Name" xml:space="preserve">
-    <value>lbPostal</value>
-  </data>
-  <data name="&gt;&gt;lbPostal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbPostal.Parent" xml:space="preserve">
-    <value>tbSeller</value>
-  </data>
-  <data name="&gt;&gt;lbPostal.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Address_4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 140</value>
-  </data>
-  <data name="Address_4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 20</value>
-  </data>
-  <data name="Address_4.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;Address_4.Name" xml:space="preserve">
-    <value>Address_4</value>
-  </data>
-  <data name="&gt;&gt;Address_4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Address_4.Parent" xml:space="preserve">
-    <value>tbSeller</value>
-  </data>
-  <data name="&gt;&gt;Address_4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lbAddressNo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbAddressNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 91</value>
-  </data>
-  <data name="lbAddressNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 13</value>
-  </data>
-  <data name="lbAddressNo.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="lbAddressNo.Text" xml:space="preserve">
-    <value>Building no / flat</value>
-  </data>
-  <data name="&gt;&gt;lbAddressNo.Name" xml:space="preserve">
-    <value>lbAddressNo</value>
-  </data>
-  <data name="&gt;&gt;lbAddressNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbAddressNo.Parent" xml:space="preserve">
-    <value>tbSeller</value>
-  </data>
-  <data name="&gt;&gt;lbAddressNo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Address_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 88</value>
-  </data>
-  <data name="Address_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 20</value>
-  </data>
-  <data name="Address_2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Address_2.Name" xml:space="preserve">
-    <value>Address_2</value>
-  </data>
-  <data name="&gt;&gt;Address_2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Address_2.Parent" xml:space="preserve">
-    <value>tbSeller</value>
-  </data>
-  <data name="&gt;&gt;Address_2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lbCity.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbCity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 117</value>
-  </data>
-  <data name="lbCity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 13</value>
-  </data>
-  <data name="lbCity.TabIndex" type="System.Int32, mscorlib">
+  <data name="rtbSellerAddress.TabIndex" type="System.Int32, mscorlib">
     <value>49</value>
   </data>
-  <data name="lbCity.Text" xml:space="preserve">
-    <value>City: </value>
+  <data name="rtbSellerAddress.Text" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;lbCity.Name" xml:space="preserve">
-    <value>lbCity</value>
+  <data name="&gt;&gt;rtbSellerAddress.Name" xml:space="preserve">
+    <value>rtbSellerAddress</value>
   </data>
-  <data name="&gt;&gt;lbCity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;rtbSellerAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbCity.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rtbSellerAddress.Parent" xml:space="preserve">
     <value>tbSeller</value>
   </data>
-  <data name="&gt;&gt;lbCity.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;rtbSellerAddress.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="Address_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 114</value>
+  <data name="txtID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 176</value>
   </data>
-  <data name="Address_3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtID.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 20</value>
   </data>
-  <data name="Address_3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;Address_3.Name" xml:space="preserve">
-    <value>Address_3</value>
-  </data>
-  <data name="&gt;&gt;Address_3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Address_3.Parent" xml:space="preserve">
-    <value>tbSeller</value>
-  </data>
-  <data name="&gt;&gt;Address_3.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Pesel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 192</value>
-  </data>
-  <data name="Pesel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 20</value>
-  </data>
-  <data name="Pesel.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtID.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;Pesel.Name" xml:space="preserve">
-    <value>Pesel</value>
+  <data name="&gt;&gt;txtID.Name" xml:space="preserve">
+    <value>txtID</value>
   </data>
-  <data name="&gt;&gt;Pesel.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtID.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Pesel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtID.Parent" xml:space="preserve">
     <value>tbSeller</value>
   </data>
-  <data name="&gt;&gt;Pesel.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;txtID.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lbPhone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 169</value>
+    <value>19, 153</value>
   </data>
   <data name="lbPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -490,13 +370,13 @@
     <value>tbSeller</value>
   </data>
   <data name="&gt;&gt;lbPhone.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="lbAddress.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 65</value>
+    <value>19, 78</value>
   </data>
   <data name="lbAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -517,61 +397,61 @@
     <value>tbSeller</value>
   </data>
   <data name="&gt;&gt;lbAddress.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>3</value>
   </data>
-  <data name="lbPesel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbPesel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 195</value>
+  <data name="lbID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 179</value>
   </data>
-  <data name="lbPesel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
+  <data name="lbID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
   </data>
-  <data name="lbPesel.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbID.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
-  <data name="lbPesel.Text" xml:space="preserve">
-    <value>PESEL (*)</value>
+  <data name="lbID.Text" xml:space="preserve">
+    <value>ID (*)</value>
   </data>
-  <data name="&gt;&gt;lbPesel.Name" xml:space="preserve">
-    <value>lbPesel</value>
+  <data name="&gt;&gt;lbID.Name" xml:space="preserve">
+    <value>lbID</value>
   </data>
-  <data name="&gt;&gt;lbPesel.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbID.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbPesel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbID.Parent" xml:space="preserve">
     <value>tbSeller</value>
   </data>
-  <data name="&gt;&gt;lbPesel.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;lbID.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="Phone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 166</value>
+  <data name="txtPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 150</value>
   </data>
-  <data name="Phone.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 20</value>
   </data>
-  <data name="Phone.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtPhone.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;Phone.Name" xml:space="preserve">
-    <value>Phone</value>
+  <data name="&gt;&gt;txtPhone.Name" xml:space="preserve">
+    <value>txtPhone</value>
   </data>
-  <data name="&gt;&gt;Phone.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtPhone.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Phone.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtPhone.Parent" xml:space="preserve">
     <value>tbSeller</value>
   </data>
-  <data name="&gt;&gt;Phone.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;txtPhone.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="rtbSellerName.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 11</value>
   </data>
   <data name="rtbSellerName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 45</value>
+    <value>215, 58</value>
   </data>
   <data name="rtbSellerName.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -589,28 +469,7 @@
     <value>tbSeller</value>
   </data>
   <data name="&gt;&gt;rtbSellerName.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="Address_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 62</value>
-  </data>
-  <data name="Address_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 20</value>
-  </data>
-  <data name="Address_1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Address_1.Name" xml:space="preserve">
-    <value>Address_1</value>
-  </data>
-  <data name="&gt;&gt;Address_1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Address_1.Parent" xml:space="preserve">
-    <value>tbSeller</value>
-  </data>
-  <data name="&gt;&gt;Address_1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>6</value>
   </data>
   <data name="lbName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -637,7 +496,7 @@
     <value>tbSeller</value>
   </data>
   <data name="&gt;&gt;lbName.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>7</value>
   </data>
   <data name="tbSeller.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -663,25 +522,28 @@
   <data name="&gt;&gt;tbSeller.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="BankAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 97</value>
+  <data name="txtBankAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 110</value>
   </data>
-  <data name="BankAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 20</value>
+  <data name="txtBankAddress.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="BankAddress.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtBankAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 50</value>
+  </data>
+  <data name="txtBankAddress.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;BankAddress.Name" xml:space="preserve">
-    <value>BankAddress</value>
+  <data name="&gt;&gt;txtBankAddress.Name" xml:space="preserve">
+    <value>txtBankAddress</value>
   </data>
-  <data name="&gt;&gt;BankAddress.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtBankAddress.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BankAddress.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtBankAddress.Parent" xml:space="preserve">
     <value>tbBank</value>
   </data>
-  <data name="&gt;&gt;BankAddress.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtBankAddress.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lbAccountNo.AutoSize" type="System.Boolean, mscorlib">
@@ -715,7 +577,7 @@
     <value>True</value>
   </data>
   <data name="lbBankAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 81</value>
+    <value>142, 94</value>
   </data>
   <data name="lbBankAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -738,25 +600,25 @@
   <data name="&gt;&gt;lbBankAddress.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="AccountNo.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtAccountNo.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 45</value>
   </data>
-  <data name="AccountNo.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtAccountNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 20</value>
   </data>
-  <data name="AccountNo.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtAccountNo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;AccountNo.Name" xml:space="preserve">
-    <value>AccountNo</value>
+  <data name="&gt;&gt;txtAccountNo.Name" xml:space="preserve">
+    <value>txtAccountNo</value>
   </data>
-  <data name="&gt;&gt;AccountNo.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtAccountNo.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AccountNo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtAccountNo.Parent" xml:space="preserve">
     <value>tbBank</value>
   </data>
-  <data name="&gt;&gt;AccountNo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtAccountNo.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="tbBank.Location" type="System.Drawing.Point, System.Drawing">

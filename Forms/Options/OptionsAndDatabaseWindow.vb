@@ -126,8 +126,8 @@ Public Class OptionsAndDatabaseWindow
     End Sub
 
     Private Sub confirm(sender As Object, e As EventArgs) Handles btnOk.Click
-        DatabaseHelper.currentDatabase = cbDbNameSelect.SelectedItem
-        DatabaseHelper.updateConnectionString(DatabaseHelper.currentDatabase)
+        Globals.DB.currentDatabase = cbDbNameSelect.SelectedItem
+
         MainWindow.setLanguage()
         Me.Close()
     End Sub
@@ -149,10 +149,9 @@ Public Class OptionsAndDatabaseWindow
         Dim answer As DialogResult
         answer = MessageBox.Show(Globals.rm.GetString("msgSureToDeleteX") & cbSelectDbName2.SelectedItem.ToString, Globals.rm.GetString("msgDatabaseHelper.confirmation"), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If answer = vbYes Then
-            If DatabaseHelper.currentDatabase = cbSelectDbName2.SelectedItem.ToString Then
+            If Globals.DB.currentDatabase = cbSelectDbName2.SelectedItem.ToString Then
                 MsgBox(Globals.rm.GetString("msgDatabaseInUseError"))
             Else
-                DatabaseHelper.con.Close()
                 MainWindow.MainGridView.DataSource = Nothing
                 MainWindow.MainGridView.Rows.Clear()
                 My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\databases\" & cbSelectDbName2.SelectedItem.ToString)
@@ -194,32 +193,25 @@ Public Class OptionsAndDatabaseWindow
     Private Sub ClearClients(sender As Object, e As EventArgs) Handles btnClearClients.Click
         Dim result As Integer = MessageBox.Show(Globals.rm.GetString("lbAreYouSure") & vbNewLine & Globals.rm.GetString("lbCannotUndone"), Globals.rm.GetString("lbCleaning"), MessageBoxButtons.YesNoCancel)
         If result = DialogResult.Yes Then
-            DatabaseHelper.con = New SqlCeConnection("Data Source=""" & Application.StartupPath & "\databases\" & DatabaseHelper.currentDatabase & """")
-            DatabaseHelper.cmd = New SqlCeCommand("DELETE FROM clients", DatabaseHelper.con)
-            If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-            DatabaseHelper.cmd.ExecuteNonQuery()
+            Globals.DB.cmd = "DELETE * FROM clients"
+            Globals.DB.executeNonQuery()
         End If
     End Sub
 
     Private Sub ClearItems(sender As Object, e As EventArgs) Handles btnClearItems.Click
         Dim result As Integer = MessageBox.Show(Globals.rm.GetString("lbAreYouSure") & vbNewLine & Globals.rm.GetString("lbCannotUndone"), Globals.rm.GetString("lbCleaning"), MessageBoxButtons.YesNoCancel)
         If result = DialogResult.Yes Then
-            DatabaseHelper.con = New SqlCeConnection("Data Source=""" & Application.StartupPath & "\databases\" & DatabaseHelper.currentDatabase & """")
-            DatabaseHelper.cmd = New SqlCeCommand("DELETE FROM items", DatabaseHelper.con)
-            If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-            DatabaseHelper.cmd.ExecuteNonQuery()
+            Globals.DB.cmd = "DELETE FROM items"
+            Globals.DB.executeNonQuery()
         End If
     End Sub
 
     Private Sub ClearReceipts(sender As Object, e As EventArgs) Handles btnClearReceipts.Click
         Dim result As Integer = MessageBox.Show(Globals.rm.GetString("lbAreYouSure") & vbNewLine & Globals.rm.GetString("lbCannotUndone"), Globals.rm.GetString("lbCleaning"), MessageBoxButtons.YesNoCancel)
         If result = DialogResult.Yes Then
-            DatabaseHelper.con = New SqlCeConnection("Data Source=""" & Application.StartupPath & "\databases\" & DatabaseHelper.currentDatabase & """")
-            DatabaseHelper.cmd = New SqlCeCommand("DELETE FROM receipts", DatabaseHelper.con)
-            DatabaseHelper.cmd2 = New SqlCeCommand("DELETE FROM receipts_data", DatabaseHelper.con)
-            If DatabaseHelper.con.State = connectionState.Closed Then DatabaseHelper.con.Open()
-            DatabaseHelper.cmd.ExecuteNonQuery()
-            DatabaseHelper.cmd2.ExecuteNonQuery()
+
+            Globals.DB.executeNonQuery("DELETE FROM receipts")
+            Globals.DB.executeNonQuery("DELETE FROM receipts_data")
         End If
     End Sub
 
@@ -233,9 +225,9 @@ Public Class OptionsAndDatabaseWindow
     End Sub
     Private Sub ExportDB(sender As Object, e As EventArgs) Handles btnExportDb.Click
         FolderBrowserDialog1.ShowDialog()
-        doThings()
+        doExport()
     End Sub
-    Sub doThings()
+    Sub doExport()
         Try
             If Directory.Exists("temp") Then System.IO.Directory.Delete("temp", True)
             If FolderBrowserDialog1.SelectedPath IsNot Nothing Then

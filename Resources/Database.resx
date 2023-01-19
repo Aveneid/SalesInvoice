@@ -7,7 +7,7 @@
     
     The primary goals of this format is to allow a simple XML format 
     that is mostly human readable. The generation and parsing of the 
-    various data types are done through the Typeconverter classes 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
     
     Example:
@@ -22,17 +22,17 @@
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
         <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
-    <data name="IDatabaseHelper.con1" type="System.Drawing.icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
                 
-    There are any number of "resheader" rows that DatabaseHelper.contain simple 
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
     
-    Each data row DatabaseHelper.contains a name, and value. The row also DatabaseHelper.contains a 
+    Each data row contains a name, and value. The row also contains a 
     type or mimetype. Type corresponds to a .NET class that support 
-    text/value DatabaseHelper.conversion through the Typeconverter architecture. 
+    text/value conversion through the TypeConverter architecture. 
     Classes that don't support this are serialized and stored with the 
     mimetype set.
     
@@ -56,7 +56,7 @@
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.Typeconverter
+            : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
@@ -118,13 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tableCategories" xml:space="preserve">
-    <value>CREATE TABLE [categories] ([name] nvarchar(100) NULL, [id] int NOT NULL  IDENTITY (1,1));</value>
+    <value>CREATE TABLE [categories] ( [id] int NOT NULL  IDENTITY (1,1),[name] nvarchar(100) NULL);</value>
   </data>
   <data name="tableCategories_data" xml:space="preserve">
-    <value>INSERT INTO categories(name) VALUES ("Uncategorized");</value>
+    <value>INSERT INTO categories(name) VALUES ('Uncategorized');</value>
   </data>
   <data name="tableClients" xml:space="preserve">
     <value>CREATE TABLE [clients] ([id] int NOT NULL  IDENTITY (1,1), [name] nvarchar(100) NOT NULL, [phone] nvarchar(15) NULL, [address] nvarchar(200) NULL, [identificator] nvarchar(15) NULL);</value>
+  </data>
+  <data name="tableConfig" xml:space="preserve">
+    <value>CREATE TABLE [config] ([Id] int IDENTITY (1,1) NOT NULL, [config_key] nvarchar(100) NOT NULL, [config_value] nvarchar(100) NULL);</value>
+  </data>
+  <data name="tableConfig_data" xml:space="preserve">
+    <value>INSERT INTO [config](config_key,config_value)  VALUES ('sellerName',NULL);
+INSERT INTO [config](config_key,config_value)  VALUES ('sellerAddress',NULL);
+INSERT INTO [config](config_key,config_value)  VALUES ('sellerHeader',NULL);
+INSERT INTO [config](config_key,config_value)  VALUES ('sellerFooter',NULL);
+INSERT INTO [config](config_key,config_value)  VALUES ('sellerAccountNo',NULL);
+INSERT INTO [config](config_key,config_value)  VALUES ('sellerBankInfo',NULL);
+INSERT INTO [config](config_key,config_value)  VALUES ('sellerPhone',NULL);
+INSERT INTO [config](config_key,config_value)  VALUES ('sellerID',NULL);</value>
   </data>
   <data name="tableItems" xml:space="preserve">
     <value>CREATE TABLE [items] ([id] int NOT NULL  IDENTITY (1,1), [name] nvarchar(100) NULL, [category] int NULL, [unit] int NULL, [price] float NULL);</value>
@@ -132,8 +145,11 @@
   <data name="tableReceipts" xml:space="preserve">
     <value>CREATE TABLE [receipts] ([id] int NOT NULL  IDENTITY (1,1), [receipt_id] nvarchar(30) NOT NULL, [client_id] int NULL, [ddate] datetime NULL);</value>
   </data>
-  <data name="tableReceipts_data" xml:space="preserve">
-    <value>CREATE TABLE [receipts_data] ([receipt_id] nvarchar(30) NULL, [amount] float NULL, [code] int NULL, [id] int NOT NULL  IDENTITY (1,1));</value>
+  <data name="tableReceiptsDetails" xml:space="preserve">
+    <value>CREATE TABLE [receiptsdetails] ([receipt_id] nvarchar(30) NULL, [amount] float NULL, [code] int NULL, [id] int NOT NULL  IDENTITY (1,1));</value>
+  </data>
+  <data name="tableUnits" xml:space="preserve">
+    <value>CREATE TABLE [units] ([id] int NOT NULL  IDENTITY (1,1), [name] nvarchar(10) NULL);</value>
   </data>
   <data name="tableUnits_data" xml:space="preserve">
     <value>INSERT INTO units(name) VALUES ('szt.');
@@ -142,9 +158,6 @@ INSERT INTO units(name) VALUES('kg');
 INSERT INTO units(name) VALUES('l');</value>
   </data>
   <data name="table_alters" xml:space="preserve">
-    <value>ALTER TABLE [categories] ADD PRIMARY KEY ([id]); ALTER TABLE [clients] ADD PRIMARY KEY ([id]); ALTER TABLE [items] ADD PRIMARY KEY ([id]); ALTER TABLE [receipts] ADD PRIMARY KEY ([id]); ALTER TABLE [receipts_data] ADD  PRIMARY KEY ([id]); ALTER TABLE [units] ADD PRIMARY KEY ([id]); CREATE UNIQUE INDEX [UQ__categories] ON [categories] ([id] ASC); CREATE UNIQUE INDEX [UQ__clients] ON [clients] ([id] ASC); CREATE UNIQUE INDEX [UQ__receipts] ON [receipts] ([id] ASC); CREATE UNIQUE INDEX [UQ__receipts_data] ON [receipts_data] ([id] ASC); CREATE UNIQUE INDEX [UQ__units] ON [units] ([id] ASC);</value>
-  </data>
-  <data name="table_units" xml:space="preserve">
-    <value>CREATE TABLE [units] ([id] int NOT NULL  IDENTITY (1,1), [name] nvarchar(10) NULL);</value>
+    <value>ALTER TABLE [categories] ADD PRIMARY KEY ([id]); ALTER TABLE [clients] ADD PRIMARY KEY ([id]); ALTER TABLE [items] ADD PRIMARY KEY ([id]); ALTER TABLE [receipts] ADD PRIMARY KEY ([id]); ALTER TABLE [receiptsdetails] ADD  PRIMARY KEY ([id]); ALTER TABLE [units] ADD PRIMARY KEY ([id]); CREATE UNIQUE INDEX [UQ__categories] ON [categories] ([id] ASC); CREATE UNIQUE INDEX [UQ__clients] ON [clients] ([id] ASC); CREATE UNIQUE INDEX [UQ__receipts] ON [receipts] ([id] ASC); CREATE UNIQUE INDEX [UQ__receipts_data] ON [receiptsdetails] ([id] ASC); CREATE UNIQUE INDEX [UQ__units] ON [units] ([id] ASC);ALTER TABLE [config] ADD CONSTRAINT [PK_config] PRIMARY KEY ([Id]);</value>
   </data>
 </root>

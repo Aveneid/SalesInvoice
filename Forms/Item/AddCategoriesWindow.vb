@@ -3,10 +3,8 @@ Imports System.Data.SqlServerCe
 Public Class AddCategoriesWindow
     Public Sub refreshListBox()
         ListBox1.Items.Clear()
-        DatabaseHelper.cmd = New SqlCeCommand("select name as c from Categories", DatabaseHelper.con)
-        If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-        DatabaseHelper.cmd.ExecuteNonQuery()
-        Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+
+        Using rd As SqlCeDataReader = Globals.DB.executeQuery("select name from Categories")
             While rd.Read()
                 ListBox1.Items.Add(rd.GetValue(0))
             End While
@@ -14,14 +12,10 @@ Public Class AddCategoriesWindow
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If TextBox1.Text IsNot Nothing Then
-            DatabaseHelper.cmd = New SqlCeCommand("SELECT name FROM  Categories WHERE name = '" & TextBox1.Text & "';", DatabaseHelper.con)
-            If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-            DatabaseHelper.cmd.ExecuteNonQuery()
-            Dim d As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+
+            Dim d As SqlCeDataReader = Globals.DB.executeQuery("SELECT name FROM  Categories WHERE name = '" & TextBox1.Text & "';")
             If Not d.Read() Then
-                DatabaseHelper.cmd = New SqlCeCommand("INSERT Categories(name) values('" & TextBox1.Text & "');", DatabaseHelper.con)
-                If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-                DatabaseHelper.cmd.ExecuteNonQuery()
+                Globals.DB.executeNonQuery("INSERT Categories(name) values('" & TextBox1.Text & "');")
                 refreshListBox()
                 TextBox1.Text = ""
             End If
@@ -35,17 +29,11 @@ Public Class AddCategoriesWindow
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If ListBox1.SelectedItem IsNot Nothing Then
-            'MsgBox(ListBox1.SelectedItem & vbNewLine & ListBox1.SelectedValue)
-            DatabaseHelper.cmd = New SqlCeCommand("SELECT * Categories where name = '" & ListBox1.SelectedItem.ToString & "'", DatabaseHelper.con)
-            If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-            Dim d As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+            Dim d As SqlCeDataReader = Globals.DB.executeQuery("SELECT * Categories where name = '" & ListBox1.SelectedItem.ToString & "'")
             If Not d.Read() Then
-                DatabaseHelper.cmd = New SqlCeCommand("DELETE FROM Categories WHERE name = '" & ListBox1.SelectedItem.ToString & "'", DatabaseHelper.con)
-                If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-                DatabaseHelper.cmd.ExecuteNonQuery()
+                Globals.DB.executeNonQuery("DELETE FROM Categories WHERE name = '" & ListBox1.SelectedItem.ToString & "'")
             Else
                 MsgBox(Globals.rm.GetString("msgCategoryDelError"))
-
             End If
             refreshListBox()
         End If

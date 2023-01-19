@@ -402,7 +402,6 @@
     <EmbeddedResource Include="Forms\Receipt\ChooseReceiptTemplate.resx">
       <DependentUpon>ChooseReceiptTemplate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -489,8 +488,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Testowa-baza.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Resources\Textfile_818_32x.png" />
-    <Content Include="Resources\version.rc" />
     <Content Include="Resources\wizard.png" />
     <None Include="Resources\wizard1.png" />
     <None Include="Resources\Print_110091.png" />
@@ -672,20 +673,14 @@
     <PackageReference Include="EntityFramework">
       <Version>6.4.4</Version>
     </PackageReference>
-    <PackageReference Include="FreeSpire.Office">
-      <Version>4.3.1</Version>
+    <PackageReference Include="FreeSpire.Doc">
+      <Version>10.8.0</Version>
     </PackageReference>
-    <PackageReference Include="Ionic.Zip">
-      <Version>1.9.1.8</Version>
+    <PackageReference Include="FreeSpire.PDF">
+      <Version>8.6.0</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
-      <Version>1.1.31</Version>
-    </PackageReference>
-    <PackageReference Include="Orc.Controls">
-      <Version>3.2.23</Version>
-    </PackageReference>
-    <PackageReference Include="Orc.SystemInfo">
-      <Version>3.1.0</Version>
+    <PackageReference Include="FreeSpire.PDFViewer">
+      <Version>7.6.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

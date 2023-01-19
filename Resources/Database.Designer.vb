@@ -65,7 +65,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ALTER TABLE [categories] ADD PRIMARY KEY ([id]); ALTER TABLE [clients] ADD PRIMARY KEY ([id]); ALTER TABLE [items] ADD PRIMARY KEY ([id]); ALTER TABLE [receipts] ADD PRIMARY KEY ([id]); ALTER TABLE [receipts_data] ADD  PRIMARY KEY ([id]); ALTER TABLE [units] ADD PRIMARY KEY ([id]); CREATE UNIQUE INDEX [UQ__categories] ON [categories] ([id] ASC); CREATE UNIQUE INDEX [UQ__clients] ON [clients] ([id] ASC); CREATE UNIQUE INDEX [UQ__receipts] ON [receipts] ([id] ASC); CREATE UNIQUE INDEX [UQ__receipts_data] ON [ [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to ALTER TABLE [categories] ADD PRIMARY KEY ([id]); ALTER TABLE [clients] ADD PRIMARY KEY ([id]); ALTER TABLE [items] ADD PRIMARY KEY ([id]); ALTER TABLE [receipts] ADD PRIMARY KEY ([id]); ALTER TABLE [receiptsdetails] ADD  PRIMARY KEY ([id]); ALTER TABLE [units] ADD PRIMARY KEY ([id]); CREATE UNIQUE INDEX [UQ__categories] ON [categories] ([id] ASC); CREATE UNIQUE INDEX [UQ__clients] ON [clients] ([id] ASC); CREATE UNIQUE INDEX [UQ__receipts] ON [receipts] ([id] ASC); CREATE UNIQUE INDEX [UQ__receipts_data] ON [rest of string was truncated]&quot;;.
         '''</summary>
         Friend Shared ReadOnly Property table_alters() As String
             Get
@@ -74,16 +74,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to CREATE TABLE [units] ([id] int NOT NULL  IDENTITY (1,1), [name] nvarchar(10) NULL);.
-        '''</summary>
-        Friend Shared ReadOnly Property table_units() As String
-            Get
-                Return ResourceManager.GetString("table_units", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to CREATE TABLE [categories] ([name] nvarchar(100) NULL, [id] int NOT NULL  IDENTITY (1,1));.
+        '''  Looks up a localized string similar to CREATE TABLE [categories] ( [id] int NOT NULL  IDENTITY (1,1),[name] nvarchar(100) NULL);.
         '''</summary>
         Friend Shared ReadOnly Property tableCategories() As String
             Get
@@ -92,7 +83,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to INSERT INTO categories(name) VALUES (&quot;Uncategorized&quot;);.
+        '''  Looks up a localized string similar to INSERT INTO categories(name) VALUES (&apos;Uncategorized&apos;);.
         '''</summary>
         Friend Shared ReadOnly Property tableCategories_data() As String
             Get
@@ -106,6 +97,30 @@ Namespace My.Resources
         Friend Shared ReadOnly Property tableClients() As String
             Get
                 Return ResourceManager.GetString("tableClients", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to CREATE TABLE [config] ([Id] int IDENTITY (1,1) NOT NULL, [config_key] nvarchar(100) NOT NULL, [config_value] nvarchar(100) NULL);.
+        '''</summary>
+        Friend Shared ReadOnly Property tableConfig() As String
+            Get
+                Return ResourceManager.GetString("tableConfig", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to INSERT INTO [config](config_key,config_value)  VALUES (&apos;sellerName&apos;,NULL);
+        '''INSERT INTO [config](config_key,config_value)  VALUES (&apos;sellerAddress&apos;,NULL);
+        '''INSERT INTO [config](config_key,config_value)  VALUES (&apos;sellerHeader&apos;,NULL);
+        '''INSERT INTO [config](config_key,config_value)  VALUES (&apos;sellerFooter&apos;,NULL);
+        '''INSERT INTO [config](config_key,config_value)  VALUES (&apos;sellerAccountNo&apos;,NULL);
+        '''INSERT INTO [config](config_key,config_value)  VALUES (&apos;sellerBankInfo&apos;,NULL);
+        '''INSERT INTO [config](config_key,config_v [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend Shared ReadOnly Property tableConfig_data() As String
+            Get
+                Return ResourceManager.GetString("tableConfig_data", resourceCulture)
             End Get
         End Property
         
@@ -128,11 +143,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to CREATE TABLE [receipts_data] ([receipt_id] nvarchar(30) NULL, [amount] float NULL, [code] int NULL, [id] int NOT NULL  IDENTITY (1,1));.
+        '''  Looks up a localized string similar to CREATE TABLE [receiptsdetails] ([receipt_id] nvarchar(30) NULL, [amount] float NULL, [code] int NULL, [id] int NOT NULL  IDENTITY (1,1));.
         '''</summary>
-        Friend Shared ReadOnly Property tableReceipts_data() As String
+        Friend Shared ReadOnly Property tableReceiptsDetails() As String
             Get
-                Return ResourceManager.GetString("tableReceipts_data", resourceCulture)
+                Return ResourceManager.GetString("tableReceiptsDetails", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to CREATE TABLE [units] ([id] int NOT NULL  IDENTITY (1,1), [name] nvarchar(10) NULL);.
+        '''</summary>
+        Friend Shared ReadOnly Property tableUnits() As String
+            Get
+                Return ResourceManager.GetString("tableUnits", resourceCulture)
             End Get
         End Property
         

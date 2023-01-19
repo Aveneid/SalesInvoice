@@ -4,56 +4,51 @@ Imports System.Data.SqlServerCe
 Public Class CreateDBWindow
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        Try
-            Dim connectionString = "Data Source=""" & Application.StartupPath & "\databases\" & DATABASENAME.Text & ".sdf"""
-            Dim en = New SqlCeEngine(connectionString)
+        If Not Globals.fileExists(Application.StartupPath & "\databases\" & DATABASENAME.Text & ".sdf") Then
+            Try
 
-            en.CreateDatabase()
-            Dim conTest = New SqlCeConnection("Data Source=""" & Application.StartupPath & "\databases\" & DATABASENAME.Text & ".sdf""")
-            conTest.Open()
-            If conTest.State = ConnectionState.Open Then
-                Dim cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableCategories"), conTest)
-                cmdTest.ExecuteNonQuery()
-                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableClients"), conTest)
-                cmdTest.ExecuteNonQuery()
-                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableItems"), conTest)
-                cmdTest.ExecuteNonQuery()
-                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableReceipts"), conTest)
-                cmdTest.ExecuteNonQuery()
-                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableReceipts_data"), conTest)
-                cmdTest.ExecuteNonQuery()
-                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("table_units"), conTest)
-                cmdTest.ExecuteNonQuery()
+                Globals.DB.currentDatabase = DATABASENAME.Text
+                Globals.DB.createDatabase(False)
 
-                Dim query As String() = Globals.DBobjects.getString("table_alters").Split(New Char() {";"c})
+                If Globals.DB.checkDBConnection Then
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getString("tableCategories"))
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getString("tableCategories_data"))
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getString("tableClients"))
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getString("tableItems"))
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getString("tableReceipts"))
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getString("tableReceipts_data"))
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getString("tableUnits"))
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getstring("tableConfig"))
+                    Globals.DB.executeNonQuery(Globals.DBobjects.getstring("tableConfig_data"))
 
-                For Each w As String In query
-                    If w.Length > 0 Then
-                        cmdTest = New SqlCeCommand(w, conTest)
-                        cmdTest.ExecuteNonQuery()
-                    End If
-                Next
+                    Dim query As String() = Globals.DBobjects.getString("table_alters").Split(New Char() {";"c})
 
-                query = Globals.DBobjects.getString("tableUnits_data").Split(New Char() {";"c})
+                    For Each w As String In query
+                        If w.Length > 0 Then
+                            Globals.DB.executeNonQuery(w)
+                        End If
+                    Next
 
-                For Each w As String In query
-                    If w.Length > 0 Then
-                        cmdTest = New SqlCeCommand(w, conTest)
-                        cmdTest.ExecuteNonQuery()
-                    End If
-                Next
+                    query = Globals.DBobjects.getString("tableUnits_data").Split(New Char() {";"c})
 
+                    For Each w As String In query
+                        If w.Length > 0 Then
+                            Globals.DB.executeNonQuery(w)
+                        End If
+                    Next
 
-
-                MessageBox.Show(Globals.rm.GetString("msgDatabaseCreatedSuccess"),
-                               "Info", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information)
-                conTest.Close()
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString())
-        End Try
-        Me.Close()
+                    MessageBox.Show(Globals.rm.GetString("msgDatabaseCreatedSuccess"),
+                                   "Info", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information)
+                Else
+                    MsgBox(Globals.rm.GetString("msgDatabaseConnectionError"))
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            End Try
+        Else
+            MsgBox(Globals.rm.GetString("msgFileExists"))
+        End If
     End Sub
 
     Private Sub CreateDBWindow_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown

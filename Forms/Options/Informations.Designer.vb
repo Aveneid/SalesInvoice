@@ -27,31 +27,25 @@ Partial Class Informations
         Me.btnSave = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tbHeader = New System.Windows.Forms.TabPage()
-        Me.Headline_info = New System.Windows.Forms.RichTextBox()
+        Me.rtbHeaderText = New System.Windows.Forms.RichTextBox()
         Me.lbHeaderText = New System.Windows.Forms.Label()
         Me.tbFooter = New System.Windows.Forms.TabPage()
         Me.lbFooterText = New System.Windows.Forms.Label()
         Me.rtbFooterText = New System.Windows.Forms.RichTextBox()
         Me.tbSeller = New System.Windows.Forms.TabPage()
-        Me.lbPostal = New System.Windows.Forms.Label()
-        Me.Address_4 = New System.Windows.Forms.TextBox()
-        Me.lbAddressNo = New System.Windows.Forms.Label()
-        Me.Address_2 = New System.Windows.Forms.TextBox()
-        Me.lbCity = New System.Windows.Forms.Label()
-        Me.Address_3 = New System.Windows.Forms.TextBox()
-        Me.Pesel = New System.Windows.Forms.TextBox()
+        Me.rtbSellerAddress = New System.Windows.Forms.RichTextBox()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.lbPhone = New System.Windows.Forms.Label()
         Me.lbAddress = New System.Windows.Forms.Label()
-        Me.lbPesel = New System.Windows.Forms.Label()
-        Me.Phone = New System.Windows.Forms.TextBox()
+        Me.lbID = New System.Windows.Forms.Label()
+        Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.rtbSellerName = New System.Windows.Forms.RichTextBox()
-        Me.Address_1 = New System.Windows.Forms.TextBox()
         Me.lbName = New System.Windows.Forms.Label()
         Me.tbBank = New System.Windows.Forms.TabPage()
-        Me.BankAddress = New System.Windows.Forms.TextBox()
+        Me.txtBankAddress = New System.Windows.Forms.TextBox()
         Me.lbAccountNo = New System.Windows.Forms.Label()
         Me.lbBankAddress = New System.Windows.Forms.Label()
-        Me.AccountNo = New System.Windows.Forms.TextBox()
+        Me.txtAccountNo = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.tbHeader.SuspendLayout()
@@ -79,15 +73,15 @@ Partial Class Informations
         'tbHeader
         '
         Me.tbHeader.BackColor = System.Drawing.SystemColors.Control
-        Me.tbHeader.Controls.Add(Me.Headline_info)
+        Me.tbHeader.Controls.Add(Me.rtbHeaderText)
         Me.tbHeader.Controls.Add(Me.lbHeaderText)
         resources.ApplyResources(Me.tbHeader, "tbHeader")
         Me.tbHeader.Name = "tbHeader"
         '
-        'Headline_info
+        'rtbHeaderText
         '
-        resources.ApplyResources(Me.Headline_info, "Headline_info")
-        Me.Headline_info.Name = "Headline_info"
+        resources.ApplyResources(Me.rtbHeaderText, "rtbHeaderText")
+        Me.rtbHeaderText.Name = "rtbHeaderText"
         '
         'lbHeaderText
         '
@@ -115,57 +109,26 @@ Partial Class Informations
         'tbSeller
         '
         Me.tbSeller.BackColor = System.Drawing.SystemColors.Control
-        Me.tbSeller.Controls.Add(Me.lbPostal)
-        Me.tbSeller.Controls.Add(Me.Address_4)
-        Me.tbSeller.Controls.Add(Me.lbAddressNo)
-        Me.tbSeller.Controls.Add(Me.Address_2)
-        Me.tbSeller.Controls.Add(Me.lbCity)
-        Me.tbSeller.Controls.Add(Me.Address_3)
-        Me.tbSeller.Controls.Add(Me.Pesel)
+        Me.tbSeller.Controls.Add(Me.rtbSellerAddress)
+        Me.tbSeller.Controls.Add(Me.txtID)
         Me.tbSeller.Controls.Add(Me.lbPhone)
         Me.tbSeller.Controls.Add(Me.lbAddress)
-        Me.tbSeller.Controls.Add(Me.lbPesel)
-        Me.tbSeller.Controls.Add(Me.Phone)
+        Me.tbSeller.Controls.Add(Me.lbID)
+        Me.tbSeller.Controls.Add(Me.txtPhone)
         Me.tbSeller.Controls.Add(Me.rtbSellerName)
-        Me.tbSeller.Controls.Add(Me.Address_1)
         Me.tbSeller.Controls.Add(Me.lbName)
         resources.ApplyResources(Me.tbSeller, "tbSeller")
         Me.tbSeller.Name = "tbSeller"
         '
-        'lbPostal
+        'rtbSellerAddress
         '
-        resources.ApplyResources(Me.lbPostal, "lbPostal")
-        Me.lbPostal.Name = "lbPostal"
+        resources.ApplyResources(Me.rtbSellerAddress, "rtbSellerAddress")
+        Me.rtbSellerAddress.Name = "rtbSellerAddress"
         '
-        'Address_4
+        'txtID
         '
-        resources.ApplyResources(Me.Address_4, "Address_4")
-        Me.Address_4.Name = "Address_4"
-        '
-        'lbAddressNo
-        '
-        resources.ApplyResources(Me.lbAddressNo, "lbAddressNo")
-        Me.lbAddressNo.Name = "lbAddressNo"
-        '
-        'Address_2
-        '
-        resources.ApplyResources(Me.Address_2, "Address_2")
-        Me.Address_2.Name = "Address_2"
-        '
-        'lbCity
-        '
-        resources.ApplyResources(Me.lbCity, "lbCity")
-        Me.lbCity.Name = "lbCity"
-        '
-        'Address_3
-        '
-        resources.ApplyResources(Me.Address_3, "Address_3")
-        Me.Address_3.Name = "Address_3"
-        '
-        'Pesel
-        '
-        resources.ApplyResources(Me.Pesel, "Pesel")
-        Me.Pesel.Name = "Pesel"
+        resources.ApplyResources(Me.txtID, "txtID")
+        Me.txtID.Name = "txtID"
         '
         'lbPhone
         '
@@ -177,25 +140,20 @@ Partial Class Informations
         resources.ApplyResources(Me.lbAddress, "lbAddress")
         Me.lbAddress.Name = "lbAddress"
         '
-        'lbPesel
+        'lbID
         '
-        resources.ApplyResources(Me.lbPesel, "lbPesel")
-        Me.lbPesel.Name = "lbPesel"
+        resources.ApplyResources(Me.lbID, "lbID")
+        Me.lbID.Name = "lbID"
         '
-        'Phone
+        'txtPhone
         '
-        resources.ApplyResources(Me.Phone, "Phone")
-        Me.Phone.Name = "Phone"
+        resources.ApplyResources(Me.txtPhone, "txtPhone")
+        Me.txtPhone.Name = "txtPhone"
         '
         'rtbSellerName
         '
         resources.ApplyResources(Me.rtbSellerName, "rtbSellerName")
         Me.rtbSellerName.Name = "rtbSellerName"
-        '
-        'Address_1
-        '
-        resources.ApplyResources(Me.Address_1, "Address_1")
-        Me.Address_1.Name = "Address_1"
         '
         'lbName
         '
@@ -205,17 +163,17 @@ Partial Class Informations
         'tbBank
         '
         Me.tbBank.BackColor = System.Drawing.SystemColors.Control
-        Me.tbBank.Controls.Add(Me.BankAddress)
+        Me.tbBank.Controls.Add(Me.txtBankAddress)
         Me.tbBank.Controls.Add(Me.lbAccountNo)
         Me.tbBank.Controls.Add(Me.lbBankAddress)
-        Me.tbBank.Controls.Add(Me.AccountNo)
+        Me.tbBank.Controls.Add(Me.txtAccountNo)
         resources.ApplyResources(Me.tbBank, "tbBank")
         Me.tbBank.Name = "tbBank"
         '
-        'BankAddress
+        'txtBankAddress
         '
-        resources.ApplyResources(Me.BankAddress, "BankAddress")
-        Me.BankAddress.Name = "BankAddress"
+        resources.ApplyResources(Me.txtBankAddress, "txtBankAddress")
+        Me.txtBankAddress.Name = "txtBankAddress"
         '
         'lbAccountNo
         '
@@ -227,10 +185,10 @@ Partial Class Informations
         resources.ApplyResources(Me.lbBankAddress, "lbBankAddress")
         Me.lbBankAddress.Name = "lbBankAddress"
         '
-        'AccountNo
+        'txtAccountNo
         '
-        resources.ApplyResources(Me.AccountNo, "AccountNo")
-        Me.AccountNo.Name = "AccountNo"
+        resources.ApplyResources(Me.txtAccountNo, "txtAccountNo")
+        Me.txtAccountNo.Name = "txtAccountNo"
         '
         'ToolTip1
         '
@@ -268,24 +226,18 @@ Partial Class Informations
     Friend WithEvents tbFooter As TabPage
     Friend WithEvents lbFooterText As Label
     Friend WithEvents rtbFooterText As RichTextBox
-    Friend WithEvents lbPostal As Label
-    Friend WithEvents Address_4 As TextBox
-    Friend WithEvents lbAddressNo As Label
-    Friend WithEvents Address_2 As TextBox
-    Friend WithEvents lbCity As Label
-    Friend WithEvents Address_3 As TextBox
-    Friend WithEvents Pesel As TextBox
+    Friend WithEvents txtID As TextBox
     Friend WithEvents lbPhone As Label
     Friend WithEvents lbAddress As Label
-    Friend WithEvents lbPesel As Label
-    Friend WithEvents Phone As TextBox
+    Friend WithEvents lbID As Label
+    Friend WithEvents txtPhone As TextBox
     Friend WithEvents rtbSellerName As RichTextBox
-    Friend WithEvents Address_1 As TextBox
     Friend WithEvents lbName As Label
-    Friend WithEvents Headline_info As RichTextBox
+    Friend WithEvents rtbHeaderText As RichTextBox
     Friend WithEvents lbHeaderText As Label
-    Friend WithEvents BankAddress As TextBox
+    Friend WithEvents txtBankAddress As TextBox
     Friend WithEvents lbAccountNo As Label
     Friend WithEvents lbBankAddress As Label
-    Friend WithEvents AccountNo As TextBox
+    Friend WithEvents txtAccountNo As TextBox
+    Friend WithEvents rtbSellerAddress As RichTextBox
 End Class

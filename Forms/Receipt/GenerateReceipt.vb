@@ -36,22 +36,16 @@ Public Class GenerateReceipt
             doc.Replace(New Regex("{{SELLER_PHONE}}"), "tel." & Globals.asSettings.Settings.Item("phone").Value)
             doc.Replace(New Regex("{{RECEIPT_NO}}"), receiptNo)
 
-            DatabaseHelper.cmd = New SqlCeCommand("SELECT ddate FROM receipts where receipt_id = '" & receiptNo & "'", DatabaseHelper.con)
-            If DatabaseHelper.con.State = connectionState.Closed Then DatabaseHelper.con.Open()
-            DatabaseHelper.cmd.ExecuteNonQuery()
 
-            Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader()
+
+            Using rd As SqlCeDataReader = Globals.DB.executeQuery("SELECT ddate FROM receipts where receipt_id = '" & receiptNo & "'")
                 If rd.Read() Then
                     doc.Replace(New Regex("{{DATE}}"), rd.GetValue(0))
                 End If
             End Using
 
 
-
-            DatabaseHelper.cmd = New SqlCeCommand("SELECT TOP 1 * FROM clients INNER JOIN receipts ON clients.id = receipts.client_id WHERE receipt_id = '" & receiptNo & "'", DatabaseHelper.con)
-            If DatabaseHelper.con.State = connectionState.Closed Then DatabaseHelper.con.Open()
-            DatabaseHelper.cmd.ExecuteNonQuery()
-            Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+            Using rd As SqlCeDataReader = Globals.DB.executeQuery("SELECT TOP 1 * FROM clients INNER JOIN receipts ON clients.id = receipts.client_id WHERE receipt_id = '" & receiptNo & "'")
                 If rd.Read() Then
                     Dim tmp = rd.GetValue(1)
                     If rd.GetValue(4).ToString.Length > 0 Then
@@ -86,9 +80,12 @@ Public Class GenerateReceipt
             Dim itemsInReceiptCount = 0
             Dim SumAll As Double = 0
 
-            DatabaseHelper.cmd = New SqlCeCommand("SELECT items.name, SUM(receipts_data.amount) AS Expr3, units.name AS Expr2, items.price, SUM(receipts_data.amount * items.price) AS Expr1 FROM receipts INNER JOIN receipts_data ON receipts.receipt_id = receipts_data.receipt_id INNER JOIN items ON receipts_data.code = items.id INNER JOIN units ON items.unit = units.id WHERE (receipts.receipt_id = '" & receiptNo & "') GROUP BY units.name, items.name, items.price", DatabaseHelper.con)
-            DatabaseHelper.cmd.ExecuteNonQuery()
-            Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+            Globals.DB.cmd = "SELECT items.name, SUM(receipts_data.amount) AS Expr3, units.name AS Expr2, items.price, SUM(receipts_data.amount * items.price) " &
+                             "AS Expr1 FROM receipts INNER JOIN ReceiptsDetails On receipts.receipt_id = ReceiptsDetails.receipt_id INNER JOIN items On ReceiptsDetails.code " &
+                             "= items.id INNER JOIN units On items.unit = units.id WHERE (receipts.receipt_id = '" & receiptNo & "') GROUP BY units.name, items.name, " &
+                             "items.price"
+
+            Using rd As SqlCeDataReader = Globals.DB.executeQuery()
                 While rd.Read()
                     dri = receiptItemsTable.AddRow(6)
                     For Each i As TableCell In dri.Cells
@@ -114,25 +111,24 @@ Public Class GenerateReceipt
                     'dri = 
                 End While
             End Using
-            DatabaseHelper.cmd = New SqlCeCommand("", DatabaseHelper.con)
+
             doc.Replace(New Regex("{{SUM_ALL}}"), SumAll)
             doc.Replace(New Regex("{{FOOTER_TEXT}}"), Globals.asSettings.Settings.Item("footerText").Value)
 
             '        doc.SaveToFile("receipts/" & receiptNo.Replace("/", "_") & DatabaseHelper.currentDatabase & ".pdf", FileFormat.PDF)
             ' Try
             'doc.SaveToFile("receipts/" & receiptNo.Replace("/", "_") & ".pdf", FileFormat.PDF)
-            filename = "receipts/" & receiptNo.Replace("/", "_") & "_" & DatabaseHelper.currentDatabase & ".pdf"
+            filename = "receipts/" & receiptNo.Replace("/", "_") & "_" & Globals.DB.currentDatabase & ".pdf"
             doc.SaveToFile(filename, FileFormat.PDF)
             ' Catch ex As Exception
             '    MsgBox(Globals.rm.GetString("msgFileError"))
             ' End Try
         End If
-        DatabaseHelper.con.Close()
     End Sub
     Public Sub PreviewReceipt()
         If filename.Length > 0 Then
             Dim print As New PrintingWindow
-            print.PdfViewer1.LoadFromFile(Application.StartupPath & "/" & filename)
+            'print.PdfViewer1.LoadFromFile(Application.StartupPath & "/" & filename)
             print.Show()
         End If
     End Sub

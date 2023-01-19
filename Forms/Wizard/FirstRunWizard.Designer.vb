@@ -22,6 +22,7 @@ Partial Class FirstRunWizard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FirstRunWizard))
         Me.tbWizardCards = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.lbLang = New System.Windows.Forms.Label()
@@ -29,45 +30,44 @@ Partial Class FirstRunWizard
         Me.lbWelcomeInfo = New System.Windows.Forms.Label()
         Me.lbHi = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.lbPostal = New System.Windows.Forms.Label()
-        Me.Address_4 = New System.Windows.Forms.TextBox()
-        Me.lbAddressNo = New System.Windows.Forms.Label()
-        Me.Address_2 = New System.Windows.Forms.TextBox()
-        Me.lbCity = New System.Windows.Forms.Label()
-        Me.Address_3 = New System.Windows.Forms.TextBox()
-        Me.Pesel = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtDatabaseName = New System.Windows.Forms.TextBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.rtbAddress = New System.Windows.Forms.RichTextBox()
+        Me.txtPesel = New System.Windows.Forms.TextBox()
         Me.lbPhone = New System.Windows.Forms.Label()
         Me.lbAddress = New System.Windows.Forms.Label()
         Me.lbPesel = New System.Windows.Forms.Label()
-        Me.Phone = New System.Windows.Forms.TextBox()
-        Me.SellerName = New System.Windows.Forms.RichTextBox()
-        Me.Address_1 = New System.Windows.Forms.TextBox()
+        Me.txtPhone = New System.Windows.Forms.TextBox()
+        Me.rtbSellerName = New System.Windows.Forms.RichTextBox()
         Me.lbName = New System.Windows.Forms.Label()
         Me.lbIdInfo = New System.Windows.Forms.Label()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.lbFooterText = New System.Windows.Forms.Label()
         Me.rtbFooterText = New System.Windows.Forms.RichTextBox()
         Me.lbHeadInfo = New System.Windows.Forms.Label()
-        Me.Headline_info = New System.Windows.Forms.RichTextBox()
+        Me.rtbHeadlineInfo = New System.Windows.Forms.RichTextBox()
         Me.lbHeaderText = New System.Windows.Forms.Label()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.lbBankInfo = New System.Windows.Forms.Label()
-        Me.BankAddress = New System.Windows.Forms.TextBox()
+        Me.txtBankAddress = New System.Windows.Forms.TextBox()
         Me.lbAccountNo = New System.Windows.Forms.Label()
         Me.lbBankAddress = New System.Windows.Forms.Label()
-        Me.AccountNo = New System.Windows.Forms.TextBox()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.txtAccountNo = New System.Windows.Forms.TextBox()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.lbEndingInfo = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.MenuLabel1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.MenuLabel5 = New System.Windows.Forms.Label()
         Me.MenuLabel4 = New System.Windows.Forms.Label()
         Me.MenuLabel3 = New System.Windows.Forms.Label()
         Me.MenuLabel2 = New System.Windows.Forms.Label()
-        Me.MenuLabel1 = New System.Windows.Forms.Label()
         Me.MenuLabel0 = New System.Windows.Forms.Label()
         Me.tbWizardCards.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -75,6 +75,7 @@ Partial Class FirstRunWizard
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +89,7 @@ Partial Class FirstRunWizard
         Me.tbWizardCards.Controls.Add(Me.TabPage3)
         Me.tbWizardCards.Controls.Add(Me.TabPage4)
         Me.tbWizardCards.Controls.Add(Me.TabPage5)
+        Me.tbWizardCards.Controls.Add(Me.TabPage6)
         Me.tbWizardCards.Dock = System.Windows.Forms.DockStyle.Right
         Me.tbWizardCards.Location = New System.Drawing.Point(138, 0)
         Me.tbWizardCards.Name = "tbWizardCards"
@@ -151,88 +153,80 @@ Partial Class FirstRunWizard
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.lbPostal)
-        Me.TabPage2.Controls.Add(Me.Address_4)
-        Me.TabPage2.Controls.Add(Me.lbAddressNo)
-        Me.TabPage2.Controls.Add(Me.Address_2)
-        Me.TabPage2.Controls.Add(Me.lbCity)
-        Me.TabPage2.Controls.Add(Me.Address_3)
-        Me.TabPage2.Controls.Add(Me.Pesel)
-        Me.TabPage2.Controls.Add(Me.lbPhone)
-        Me.TabPage2.Controls.Add(Me.lbAddress)
-        Me.TabPage2.Controls.Add(Me.lbPesel)
-        Me.TabPage2.Controls.Add(Me.Phone)
-        Me.TabPage2.Controls.Add(Me.SellerName)
-        Me.TabPage2.Controls.Add(Me.Address_1)
-        Me.TabPage2.Controls.Add(Me.lbName)
-        Me.TabPage2.Controls.Add(Me.lbIdInfo)
+        Me.TabPage2.Controls.Add(Me.Label3)
+        Me.TabPage2.Controls.Add(Me.Label1)
+        Me.TabPage2.Controls.Add(Me.txtDatabaseName)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(340, 303)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Dane Identyfikacyjne"
+        Me.TabPage2.TabIndex = 5
+        Me.TabPage2.Text = "Baza danych"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'lbPostal
+        'Label3
         '
-        Me.lbPostal.AutoSize = True
-        Me.lbPostal.Location = New System.Drawing.Point(21, 209)
-        Me.lbPostal.Name = "lbPostal"
-        Me.lbPostal.Size = New System.Drawing.Size(63, 13)
-        Me.lbPostal.TabIndex = 37
-        Me.lbPostal.Text = "Postal code"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(21, 26)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(275, 78)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = resources.GetString("Label3.Text")
         '
-        'Address_4
+        'Label1
         '
-        Me.Address_4.Location = New System.Drawing.Point(117, 206)
-        Me.Address_4.Name = "Address_4"
-        Me.Address_4.Size = New System.Drawing.Size(217, 20)
-        Me.Address_4.TabIndex = 4
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(20, 136)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Nazwa:"
         '
-        'lbAddressNo
+        'txtDatabaseName
         '
-        Me.lbAddressNo.AutoSize = True
-        Me.lbAddressNo.Location = New System.Drawing.Point(21, 157)
-        Me.lbAddressNo.Name = "lbAddressNo"
-        Me.lbAddressNo.Size = New System.Drawing.Size(84, 13)
-        Me.lbAddressNo.TabIndex = 35
-        Me.lbAddressNo.Text = "Building no / flat"
+        Me.txtDatabaseName.Location = New System.Drawing.Point(91, 133)
+        Me.txtDatabaseName.Name = "txtDatabaseName"
+        Me.txtDatabaseName.Size = New System.Drawing.Size(205, 20)
+        Me.txtDatabaseName.TabIndex = 7
         '
-        'Address_2
+        'TabPage3
         '
-        Me.Address_2.Location = New System.Drawing.Point(117, 154)
-        Me.Address_2.Name = "Address_2"
-        Me.Address_2.Size = New System.Drawing.Size(215, 20)
-        Me.Address_2.TabIndex = 2
+        Me.TabPage3.Controls.Add(Me.rtbAddress)
+        Me.TabPage3.Controls.Add(Me.txtPesel)
+        Me.TabPage3.Controls.Add(Me.lbPhone)
+        Me.TabPage3.Controls.Add(Me.lbAddress)
+        Me.TabPage3.Controls.Add(Me.lbPesel)
+        Me.TabPage3.Controls.Add(Me.txtPhone)
+        Me.TabPage3.Controls.Add(Me.rtbSellerName)
+        Me.TabPage3.Controls.Add(Me.lbName)
+        Me.TabPage3.Controls.Add(Me.lbIdInfo)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(340, 303)
+        Me.TabPage3.TabIndex = 1
+        Me.TabPage3.Text = "Dane Identyfikacyjne"
+        Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'lbCity
+        'rtbAddress
         '
-        Me.lbCity.AutoSize = True
-        Me.lbCity.Location = New System.Drawing.Point(21, 183)
-        Me.lbCity.Name = "lbCity"
-        Me.lbCity.Size = New System.Drawing.Size(30, 13)
-        Me.lbCity.TabIndex = 33
-        Me.lbCity.Text = "City: "
+        Me.rtbAddress.Location = New System.Drawing.Point(117, 140)
+        Me.rtbAddress.Name = "rtbAddress"
+        Me.rtbAddress.Size = New System.Drawing.Size(215, 56)
+        Me.rtbAddress.TabIndex = 32
+        Me.rtbAddress.Text = ""
         '
-        'Address_3
+        'txtPesel
         '
-        Me.Address_3.Location = New System.Drawing.Point(117, 180)
-        Me.Address_3.Name = "Address_3"
-        Me.Address_3.Size = New System.Drawing.Size(215, 20)
-        Me.Address_3.TabIndex = 3
-        '
-        'Pesel
-        '
-        Me.Pesel.Location = New System.Drawing.Point(117, 258)
-        Me.Pesel.Name = "Pesel"
-        Me.Pesel.Size = New System.Drawing.Size(215, 20)
-        Me.Pesel.TabIndex = 6
+        Me.txtPesel.Location = New System.Drawing.Point(117, 228)
+        Me.txtPesel.Name = "txtPesel"
+        Me.txtPesel.Size = New System.Drawing.Size(215, 20)
+        Me.txtPesel.TabIndex = 6
         '
         'lbPhone
         '
         Me.lbPhone.AutoSize = True
-        Me.lbPhone.Location = New System.Drawing.Point(21, 235)
+        Me.lbPhone.Location = New System.Drawing.Point(21, 205)
         Me.lbPhone.Name = "lbPhone"
         Me.lbPhone.Size = New System.Drawing.Size(41, 13)
         Me.lbPhone.TabIndex = 29
@@ -241,7 +235,7 @@ Partial Class FirstRunWizard
         'lbAddress
         '
         Me.lbAddress.AutoSize = True
-        Me.lbAddress.Location = New System.Drawing.Point(21, 131)
+        Me.lbAddress.Location = New System.Drawing.Point(21, 142)
         Me.lbAddress.Name = "lbAddress"
         Me.lbAddress.Size = New System.Drawing.Size(45, 13)
         Me.lbAddress.TabIndex = 28
@@ -250,33 +244,26 @@ Partial Class FirstRunWizard
         'lbPesel
         '
         Me.lbPesel.AutoSize = True
-        Me.lbPesel.Location = New System.Drawing.Point(21, 261)
+        Me.lbPesel.Location = New System.Drawing.Point(21, 231)
         Me.lbPesel.Name = "lbPesel"
         Me.lbPesel.Size = New System.Drawing.Size(54, 13)
         Me.lbPesel.TabIndex = 30
         Me.lbPesel.Text = "PESEL (*)"
         '
-        'Phone
+        'txtPhone
         '
-        Me.Phone.Location = New System.Drawing.Point(117, 232)
-        Me.Phone.Name = "Phone"
-        Me.Phone.Size = New System.Drawing.Size(215, 20)
-        Me.Phone.TabIndex = 5
+        Me.txtPhone.Location = New System.Drawing.Point(117, 202)
+        Me.txtPhone.Name = "txtPhone"
+        Me.txtPhone.Size = New System.Drawing.Size(215, 20)
+        Me.txtPhone.TabIndex = 5
         '
-        'SellerName
+        'rtbSellerName
         '
-        Me.SellerName.Location = New System.Drawing.Point(117, 77)
-        Me.SellerName.Name = "SellerName"
-        Me.SellerName.Size = New System.Drawing.Size(215, 45)
-        Me.SellerName.TabIndex = 0
-        Me.SellerName.Text = ""
-        '
-        'Address_1
-        '
-        Me.Address_1.Location = New System.Drawing.Point(117, 128)
-        Me.Address_1.Name = "Address_1"
-        Me.Address_1.Size = New System.Drawing.Size(215, 20)
-        Me.Address_1.TabIndex = 1
+        Me.rtbSellerName.Location = New System.Drawing.Point(117, 77)
+        Me.rtbSellerName.Name = "rtbSellerName"
+        Me.rtbSellerName.Size = New System.Drawing.Size(215, 56)
+        Me.rtbSellerName.TabIndex = 0
+        Me.rtbSellerName.Text = ""
         '
         'lbName
         '
@@ -297,19 +284,19 @@ Partial Class FirstRunWizard
         Me.lbIdInfo.Text = "Te dane są danymi podstawowymi jakie są wymagane " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "do prawidłowego druku rachunku" &
     "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Proszę wypełnić ten formularz."
         '
-        'TabPage3
+        'TabPage4
         '
-        Me.TabPage3.Controls.Add(Me.lbFooterText)
-        Me.TabPage3.Controls.Add(Me.rtbFooterText)
-        Me.TabPage3.Controls.Add(Me.lbHeadInfo)
-        Me.TabPage3.Controls.Add(Me.Headline_info)
-        Me.TabPage3.Controls.Add(Me.lbHeaderText)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(340, 303)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Informacje nagłówka"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.TabPage4.Controls.Add(Me.lbFooterText)
+        Me.TabPage4.Controls.Add(Me.rtbFooterText)
+        Me.TabPage4.Controls.Add(Me.lbHeadInfo)
+        Me.TabPage4.Controls.Add(Me.rtbHeadlineInfo)
+        Me.TabPage4.Controls.Add(Me.lbHeaderText)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(340, 303)
+        Me.TabPage4.TabIndex = 2
+        Me.TabPage4.Text = "Informacje nagłówka"
+        Me.TabPage4.UseVisualStyleBackColor = True
         '
         'lbFooterText
         '
@@ -338,13 +325,13 @@ Partial Class FirstRunWizard
         Me.lbHeadInfo.TabIndex = 10
         Me.lbHeadInfo.Text = "Informacje nagłówka " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(będą umieszczone w lewym górnym rogu rachunku)"
         '
-        'Headline_info
+        'rtbHeadlineInfo
         '
-        Me.Headline_info.Location = New System.Drawing.Point(63, 64)
-        Me.Headline_info.Name = "Headline_info"
-        Me.Headline_info.Size = New System.Drawing.Size(229, 90)
-        Me.Headline_info.TabIndex = 0
-        Me.Headline_info.Text = ""
+        Me.rtbHeadlineInfo.Location = New System.Drawing.Point(63, 64)
+        Me.rtbHeadlineInfo.Name = "rtbHeadlineInfo"
+        Me.rtbHeadlineInfo.Size = New System.Drawing.Size(229, 90)
+        Me.rtbHeadlineInfo.TabIndex = 0
+        Me.rtbHeadlineInfo.Text = ""
         '
         'lbHeaderText
         '
@@ -356,19 +343,19 @@ Partial Class FirstRunWizard
         Me.lbHeaderText.Text = "Info:"
         Me.lbHeaderText.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'TabPage4
+        'TabPage5
         '
-        Me.TabPage4.Controls.Add(Me.lbBankInfo)
-        Me.TabPage4.Controls.Add(Me.BankAddress)
-        Me.TabPage4.Controls.Add(Me.lbAccountNo)
-        Me.TabPage4.Controls.Add(Me.lbBankAddress)
-        Me.TabPage4.Controls.Add(Me.AccountNo)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(340, 303)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Informacje bankowe"
-        Me.TabPage4.UseVisualStyleBackColor = True
+        Me.TabPage5.Controls.Add(Me.lbBankInfo)
+        Me.TabPage5.Controls.Add(Me.txtBankAddress)
+        Me.TabPage5.Controls.Add(Me.lbAccountNo)
+        Me.TabPage5.Controls.Add(Me.lbBankAddress)
+        Me.TabPage5.Controls.Add(Me.txtAccountNo)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(340, 303)
+        Me.TabPage5.TabIndex = 3
+        Me.TabPage5.Text = "Informacje bankowe"
+        Me.TabPage5.UseVisualStyleBackColor = True
         '
         'lbBankInfo
         '
@@ -381,12 +368,13 @@ Partial Class FirstRunWizard
     " fill this form, otherwise payment via bank" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " transfer will be locked." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You ca" &
     "n fill this later in options window." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'BankAddress
+        'txtBankAddress
         '
-        Me.BankAddress.Location = New System.Drawing.Point(58, 209)
-        Me.BankAddress.Name = "BankAddress"
-        Me.BankAddress.Size = New System.Drawing.Size(226, 20)
-        Me.BankAddress.TabIndex = 1
+        Me.txtBankAddress.Location = New System.Drawing.Point(58, 209)
+        Me.txtBankAddress.Multiline = True
+        Me.txtBankAddress.Name = "txtBankAddress"
+        Me.txtBankAddress.Size = New System.Drawing.Size(226, 47)
+        Me.txtBankAddress.TabIndex = 1
         '
         'lbAccountNo
         '
@@ -406,22 +394,22 @@ Partial Class FirstRunWizard
         Me.lbBankAddress.TabIndex = 30
         Me.lbBankAddress.Text = "Adres banku"
         '
-        'AccountNo
+        'txtAccountNo
         '
-        Me.AccountNo.Location = New System.Drawing.Point(58, 157)
-        Me.AccountNo.Name = "AccountNo"
-        Me.AccountNo.Size = New System.Drawing.Size(226, 20)
-        Me.AccountNo.TabIndex = 0
+        Me.txtAccountNo.Location = New System.Drawing.Point(58, 157)
+        Me.txtAccountNo.Name = "txtAccountNo"
+        Me.txtAccountNo.Size = New System.Drawing.Size(226, 20)
+        Me.txtAccountNo.TabIndex = 0
         '
-        'TabPage5
+        'TabPage6
         '
-        Me.TabPage5.Controls.Add(Me.lbEndingInfo)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(340, 303)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Możemy zaczynać!"
-        Me.TabPage5.UseVisualStyleBackColor = True
+        Me.TabPage6.Controls.Add(Me.lbEndingInfo)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(340, 303)
+        Me.TabPage6.TabIndex = 4
+        Me.TabPage6.Text = "Możemy zaczynać!"
+        Me.TabPage6.UseVisualStyleBackColor = True
         '
         'lbEndingInfo
         '
@@ -473,17 +461,28 @@ Partial Class FirstRunWizard
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.MenuLabel1)
         Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.Panel2.Controls.Add(Me.MenuLabel5)
         Me.Panel2.Controls.Add(Me.MenuLabel4)
         Me.Panel2.Controls.Add(Me.MenuLabel3)
         Me.Panel2.Controls.Add(Me.MenuLabel2)
-        Me.Panel2.Controls.Add(Me.MenuLabel1)
         Me.Panel2.Controls.Add(Me.MenuLabel0)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(136, 332)
         Me.Panel2.TabIndex = 2
+        '
+        'MenuLabel1
+        '
+        Me.MenuLabel1.AutoSize = True
+        Me.MenuLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
+        Me.MenuLabel1.Location = New System.Drawing.Point(12, 165)
+        Me.MenuLabel1.Name = "MenuLabel1"
+        Me.MenuLabel1.Size = New System.Drawing.Size(68, 13)
+        Me.MenuLabel1.TabIndex = 6
+        Me.MenuLabel1.Text = "Baza danych"
         '
         'PictureBox1
         '
@@ -494,49 +493,54 @@ Partial Class FirstRunWizard
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
+        'MenuLabel5
+        '
+        Me.MenuLabel5.AutoSize = True
+        Me.MenuLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
+        Me.MenuLabel5.Location = New System.Drawing.Point(12, 289)
+        Me.MenuLabel5.Name = "MenuLabel5"
+        Me.MenuLabel5.Size = New System.Drawing.Size(95, 13)
+        Me.MenuLabel5.TabIndex = 4
+        Me.MenuLabel5.Text = "Możemy zaczynać!"
+        '
         'MenuLabel4
         '
         Me.MenuLabel4.AutoSize = True
-        Me.MenuLabel4.Location = New System.Drawing.Point(12, 262)
+        Me.MenuLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
+        Me.MenuLabel4.Location = New System.Drawing.Point(12, 258)
         Me.MenuLabel4.Name = "MenuLabel4"
-        Me.MenuLabel4.Size = New System.Drawing.Size(97, 13)
-        Me.MenuLabel4.TabIndex = 4
-        Me.MenuLabel4.Text = "Możemy zaczynać!"
+        Me.MenuLabel4.Size = New System.Drawing.Size(101, 13)
+        Me.MenuLabel4.TabIndex = 3
+        Me.MenuLabel4.Text = "Informacje bankowe"
         '
         'MenuLabel3
         '
         Me.MenuLabel3.AutoSize = True
-        Me.MenuLabel3.Location = New System.Drawing.Point(12, 230)
+        Me.MenuLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
+        Me.MenuLabel3.Location = New System.Drawing.Point(12, 227)
+        Me.MenuLabel3.MaximumSize = New System.Drawing.Size(107, 30)
         Me.MenuLabel3.Name = "MenuLabel3"
-        Me.MenuLabel3.Size = New System.Drawing.Size(103, 13)
-        Me.MenuLabel3.TabIndex = 3
-        Me.MenuLabel3.Text = "Informacje bankowe"
+        Me.MenuLabel3.Size = New System.Drawing.Size(81, 13)
+        Me.MenuLabel3.TabIndex = 2
+        Me.MenuLabel3.Text = "Dane nagłówka"
         '
         'MenuLabel2
         '
         Me.MenuLabel2.AutoSize = True
-        Me.MenuLabel2.Location = New System.Drawing.Point(12, 198)
-        Me.MenuLabel2.MaximumSize = New System.Drawing.Size(107, 30)
+        Me.MenuLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
+        Me.MenuLabel2.Location = New System.Drawing.Point(12, 196)
         Me.MenuLabel2.Name = "MenuLabel2"
-        Me.MenuLabel2.Size = New System.Drawing.Size(84, 13)
-        Me.MenuLabel2.TabIndex = 2
-        Me.MenuLabel2.Text = "Dane nagłówka"
-        '
-        'MenuLabel1
-        '
-        Me.MenuLabel1.AutoSize = True
-        Me.MenuLabel1.Location = New System.Drawing.Point(12, 166)
-        Me.MenuLabel1.Name = "MenuLabel1"
-        Me.MenuLabel1.Size = New System.Drawing.Size(107, 13)
-        Me.MenuLabel1.TabIndex = 1
-        Me.MenuLabel1.Text = "Dane Identyfikacyjne"
+        Me.MenuLabel2.Size = New System.Drawing.Size(105, 13)
+        Me.MenuLabel2.TabIndex = 1
+        Me.MenuLabel2.Text = "Dane Identyfikacyjne"
         '
         'MenuLabel0
         '
         Me.MenuLabel0.AutoSize = True
+        Me.MenuLabel0.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
         Me.MenuLabel0.Location = New System.Drawing.Point(12, 134)
         Me.MenuLabel0.Name = "MenuLabel0"
-        Me.MenuLabel0.Size = New System.Drawing.Size(34, 13)
+        Me.MenuLabel0.Size = New System.Drawing.Size(32, 13)
         Me.MenuLabel0.TabIndex = 0
         Me.MenuLabel0.Text = "Witaj!"
         '
@@ -565,6 +569,8 @@ Partial Class FirstRunWizard
         Me.TabPage4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -574,44 +580,37 @@ Partial Class FirstRunWizard
     End Sub
     Friend WithEvents tbWizardCards As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnBack As System.Windows.Forms.Button
     Friend WithEvents btnNext As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Pesel As System.Windows.Forms.TextBox
+    Friend WithEvents txtPesel As System.Windows.Forms.TextBox
     Friend WithEvents lbPhone As System.Windows.Forms.Label
     Friend WithEvents lbAddress As System.Windows.Forms.Label
     Friend WithEvents lbPesel As System.Windows.Forms.Label
-    Friend WithEvents Phone As System.Windows.Forms.TextBox
-    Friend WithEvents SellerName As System.Windows.Forms.RichTextBox
-    Friend WithEvents Address_1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtPhone As System.Windows.Forms.TextBox
+    Friend WithEvents rtbSellerName As System.Windows.Forms.RichTextBox
     Friend WithEvents lbName As System.Windows.Forms.Label
     Friend WithEvents lbIdInfo As System.Windows.Forms.Label
-    Friend WithEvents lbAddressNo As System.Windows.Forms.Label
-    Friend WithEvents Address_2 As System.Windows.Forms.TextBox
-    Friend WithEvents lbCity As System.Windows.Forms.Label
-    Friend WithEvents Address_3 As System.Windows.Forms.TextBox
-    Friend WithEvents lbPostal As System.Windows.Forms.Label
-    Friend WithEvents Address_4 As System.Windows.Forms.TextBox
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents lbHeadInfo As System.Windows.Forms.Label
-    Friend WithEvents Headline_info As System.Windows.Forms.RichTextBox
-    Friend WithEvents lbHeaderText As System.Windows.Forms.Label
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
+    Friend WithEvents lbHeadInfo As System.Windows.Forms.Label
+    Friend WithEvents rtbHeadlineInfo As System.Windows.Forms.RichTextBox
+    Friend WithEvents lbHeaderText As System.Windows.Forms.Label
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
+    Friend WithEvents MenuLabel5 As System.Windows.Forms.Label
     Friend WithEvents MenuLabel4 As System.Windows.Forms.Label
     Friend WithEvents MenuLabel3 As System.Windows.Forms.Label
     Friend WithEvents MenuLabel2 As System.Windows.Forms.Label
-    Friend WithEvents MenuLabel1 As System.Windows.Forms.Label
     Friend WithEvents MenuLabel0 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lbBankInfo As System.Windows.Forms.Label
-    Friend WithEvents BankAddress As System.Windows.Forms.TextBox
+    Friend WithEvents txtBankAddress As System.Windows.Forms.TextBox
     Friend WithEvents lbAccountNo As System.Windows.Forms.Label
     Friend WithEvents lbBankAddress As System.Windows.Forms.Label
-    Friend WithEvents AccountNo As System.Windows.Forms.TextBox
+    Friend WithEvents txtAccountNo As System.Windows.Forms.TextBox
     Friend WithEvents lbWelcomeInfo As System.Windows.Forms.Label
     Friend WithEvents lbHi As System.Windows.Forms.Label
     Friend WithEvents lbLang As System.Windows.Forms.Label
@@ -619,4 +618,10 @@ Partial Class FirstRunWizard
     Friend WithEvents lbEndingInfo As System.Windows.Forms.Label
     Friend WithEvents lbFooterText As Label
     Friend WithEvents rtbFooterText As RichTextBox
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents MenuLabel1 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtDatabaseName As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents rtbAddress As RichTextBox
 End Class

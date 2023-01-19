@@ -19,11 +19,7 @@ Public Class EditCategory
     Private Sub Dialog1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = Globals.rm.GetString("lbEdit")
         lbCatName.Text = Globals.rm.GetString("lbCategory")
-
-        DatabaseHelper.cmd = New SqlCeCommand("select name as c from Categories", DatabaseHelper.con)
-        If DatabaseHelper.con.State = connectionState.Closed Then DatabaseHelper.con.Open()
-        DatabaseHelper.cmd.ExecuteNonQuery()
-        Using rd As SqlCeDataReader = DatabaseHelper.cmd.ExecuteReader
+        Using rd As SqlCeDataReader = Globals.DB.executeQuery("select name as c from Categories")
             While rd.Read()
                 cbCategories.Items.Add(rd.GetValue(0))
             End While

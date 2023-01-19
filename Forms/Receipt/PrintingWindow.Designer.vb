@@ -1,4 +1,4 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PrintingWindow
     Inherits System.Windows.Forms.Form
 
@@ -23,6 +23,7 @@ Partial Class PrintingWindow
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PdfViewer1 = New Spire.PdfViewer.Forms.PdfViewer()
+        '
         Me.SuspendLayout()
         '
         'PdfViewer1
@@ -32,12 +33,12 @@ Partial Class PrintingWindow
         Me.PdfViewer1.IgnoreCase = False
         Me.PdfViewer1.IsToolBarVisible = True
         Me.PdfViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.PdfViewer1.MultiPagesThreshold = 60
+        'Me.PdfViewer1.MultiPagesThreshold = 60
         Me.PdfViewer1.Name = "PdfViewer1"
         Me.PdfViewer1.Size = New System.Drawing.Size(814, 411)
         Me.PdfViewer1.TabIndex = 2
         Me.PdfViewer1.Text = "Print Preview"
-        Me.PdfViewer1.Threshold = 60
+        'Me.PdfViewer1.Threshold = 60
         Me.PdfViewer1.ViewerBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
         '
         'PrintingWindow

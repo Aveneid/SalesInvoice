@@ -647,7 +647,7 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to This info is required for receipt to generate correctly.
-        '''		Please fill this foGlobals.rm.
+        '''		Please fill this form.
         '''		.
         '''</summary>
         Friend Shared ReadOnly Property lbIdInfo() As String
@@ -1198,7 +1198,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Great! We have DatabaseHelper.configured basic info.
+        '''  Looks up a localized string similar to Great! We have configured basic info.
         '''	Remember, you can change all of this info in Settings
         '''	later.
         '''
@@ -1231,11 +1231,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Application DatabaseHelper.config file is corrupted or not exists. Please reinstall program..
+        '''  Looks up a localized string similar to Application config file is corrupted or not exists. Please reinstall program..
         '''</summary>
-        Friend Shared ReadOnly Property msgAppDatabaseHelper_configError() As String
+        Friend Shared ReadOnly Property msgAppconfigError() As String
             Get
-                Return ResourceManager.GetString("msgAppDatabaseHelper.configError", resourceCulture)
+                Return ResourceManager.GetString("msgAppconfigError", resourceCulture)
             End Get
         End Property
         
@@ -1245,6 +1245,24 @@ Namespace My.Resources
         Friend Shared ReadOnly Property msgCategoryDelError() As String
             Get
                 Return ResourceManager.GetString("msgCategoryDelError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to confirmation.
+        '''</summary>
+        Friend Shared ReadOnly Property msgconfirmation() As String
+            Get
+                Return ResourceManager.GetString("msgconfirmation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cannot create connection to database!.
+        '''</summary>
+        Friend Shared ReadOnly Property msgDatabaseConnectionError() As String
+            Get
+                Return ResourceManager.GetString("msgDatabaseConnectionError", resourceCulture)
             End Get
         End Property
         
@@ -1263,15 +1281,6 @@ Namespace My.Resources
         Friend Shared ReadOnly Property msgDatabaseError() As String
             Get
                 Return ResourceManager.GetString("msgDatabaseError", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to DatabaseHelper.confirmation.
-        '''</summary>
-        Friend Shared ReadOnly Property msgDatabaseHelper_confirmation() As String
-            Get
-                Return ResourceManager.GetString("msgDatabaseHelper.confirmation", resourceCulture)
             End Get
         End Property
         
@@ -1312,6 +1321,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to File with this name already exists. Please choose different name..
+        '''</summary>
+        Friend Shared ReadOnly Property msgFileExists() As String
+            Get
+                Return ResourceManager.GetString("msgFileExists", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to An error occured while performing operation.
         '''</summary>
         Friend Shared ReadOnly Property msgGeneralError() As String
@@ -1321,11 +1339,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Not enough data.
+        '''  Looks up a localized string similar to Not enough data, please fill all fields..
         '''</summary>
-        Friend Shared ReadOnly Property msgNnotEnoughData() As String
+        Friend Shared ReadOnly Property msgNotEnoughData() As String
             Get
-                Return ResourceManager.GetString("msgNnotEnoughData", resourceCulture)
+                Return ResourceManager.GetString("msgNotEnoughData", resourceCulture)
             End Get
         End Property
         

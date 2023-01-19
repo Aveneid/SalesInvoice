@@ -1,7 +1,11 @@
 ﻿Imports System.Configuration
 Imports System.Collections.Specialized
 Imports SalesInvoice.Utils
+Imports System.Data.SqlServerCe
+
 Public Class Informations
+    Public fromNewDBWindow As Boolean = False
+
     Sub setLanguage()
 
         'header
@@ -19,11 +23,8 @@ Public Class Informations
         tbSeller.Text = Globals.rm.GetString("lbIdData")
         lbName.Text = Globals.rm.GetString("lbItemName")
         lbAddress.Text = Globals.rm.GetString("lbAddress")
-        lbAddressNo.Text = Globals.rm.GetString("lbAddressNo")
-        lbCity.Text = Globals.rm.GetString("lbCity")
-        lbPostal.Text = Globals.rm.GetString("lbPostal")
         lbPhone.Text = Globals.rm.GetString("lbPhone")
-        lbPesel.Text = Globals.rm.GetString("lbPESEL") & " (*)"
+        lbID.Text = Globals.rm.GetString("lbPESEL") & " (*)"
 
         'bank
         tbBank.Text = Globals.rm.GetString("lbBankDetails")
@@ -31,19 +32,33 @@ Public Class Informations
         lbBankAddress.Text = Globals.rm.GetString("lbBankAddress")
 
 
-        rtbSellerName.Text = Globals.asSettings.Settings("sellerName").Value
-        Address_1.Text = Globals.asSettings.Settings("address").Value
-        Address_2.Text = Globals.asSettings.Settings("buildingNo").Value
-        Address_3.Text = Globals.asSettings.Settings("city").Value
-        Address_4.Text = Globals.asSettings.Settings("postalCode").Value
-        Phone.Text = Globals.asSettings.Settings("phone").Value
-        Pesel.Text = Globals.asSettings.Settings("pesel").Value
 
-        AccountNo.Text = Globals.asSettings.Settings("accountNo").Value
-        BankAddress.Text = Globals.asSettings.Settings("bankAddress").Value
+        'get data from database
+        'fields order: sellerName, sellerAddress, sellerHeader,sellerFooter,sellerAccountNo,sellerBankInfo,sellerPhone,sellerID
+        Globals.DB.cmd = "SELECT config_key,config_value FROM config ORDER BY id"
+        Using rd As SqlCeDataReader = Globals.DB.executeQuery()
+            While rd.Read()
+                Select Case rd.GetValue(0)
+                    Case "sellerName"
+                        Me.rtbSellerName = rd.GetValue(1)
+                    Case "sellerAddress"
+                        Me.rtbSellerAddress = rd.GetValue(1)
+                    Case "sellerHeader"
+                        Me.rtbHeaderText = rd.GetValue(1)
+                    Case "sellerFooter"
+                        Me.rtbFooterText = rd.GetValue(1)
+                    Case "sellerAccountNo"
+                        Me.txtAccountNo = rd.GetValue(1)
+                    Case "sellerBankInfo"
+                        Me.txtBankAddress = rd.GetValue(1)
+                    Case "sellerPhone"
+                        Me.txtPhone = rd.GetValue(1)
+                    Case "sellerID"
+                        Me.txtID = rd.GetValue(1)
+                End Select
+            End While
+        End Using
 
-        rtbFooterText.Text = Globals.asSettings.Settings("footerText").Value
-        Headline_info.Text = Globals.asSettings.Settings("headlineInfo").Value
 
 
         Me.Text = Globals.rm.GetString("lbInfo")
@@ -51,72 +66,77 @@ Public Class Informations
         Me.Refresh()
 
     End Sub
+    Function checkFields()
+        For Each c In Me.Controls
+            If TypeOf c Is TextBox Or TypeOf c Is RichTextBox Then
+                If c.text.TextLength < 5 Then
+                    Return True
+                End If
+            End If
+        Next
+        Return False
+    End Function
 
 
     Private Sub SaveSettings(sender As Object, e As EventArgs) Handles btnSave.Click
+        Try
+            If Not checkFields() Then
 
-        'Header info
 
-        Globals.asSettings.Settings.Item("headlineInfo").Value = Headline_info.Text
+                'insert data into database
 
-        'footerInfo
-        Globals.asSettings.Settings.Item("footerText").Value = rtbFooterText.Text
+                Globals.DB.cmd = "UPDATE config SET config_value=""" & rtbSellerName.Text & """ WHERE config_key=""sellerName"""
+                Globals.DB.executeNonQuery()
+                Globals.DB.cmd = "UPDATE config SET config_value=""" & rtbSellerAddress.Text & """ WHERE config_key=""sellerAddress"""
+                Globals.DB.executeNonQuery()
+                Globals.DB.cmd = "UPDATE config SET config_value=""" & txtPhone.Text & """ WHERE config_key=""sellerPhone"""
+                Globals.DB.executeNonQuery()
+                Globals.DB.cmd = "UPDATE config SET config_value=""" & txtID.Text & """ WHERE config_key=""sellerID"""
+                Globals.DB.executeNonQuery()
+                Globals.DB.cmd = "UPDATE config SET config_value=""" & rtbHeaderText.Text & """ WHERE config_key=""sellerHeader"""
+                Globals.DB.executeNonQuery()
 
-        'Seller info
-        Globals.asSettings.Settings.Item("sellerName").Value = rtbSellerName.Text
-        Globals.asSettings.Settings.Item("address").Value = Address_1.Text
-        Globals.asSettings.Settings.Item("buildingNo").Value = Address_2.Text
-        Globals.asSettings.Settings.Item("city").Value = Address_3.Text
-        Globals.asSettings.Settings.Item("postalCode").Value = Address_4.Text
-        Globals.asSettings.Settings.Item("phone").Value = Phone.Text
-        Globals.asSettings.Settings.Item("pesel").Value = Pesel.Text
+                If txtAccountNo.Text IsNot Nothing And txtBankAddress.Text IsNot Nothing Then
+                    Globals.DB.cmd = "UPDATE config SET config_value=""" & txtAccountNo.Text & """ WHERE config_key=""sellerAccountNo"""
+                    Globals.DB.executeNonQuery()
+                    Globals.DB.cmd = "UPDATE config SET config_value=""" & txtBankAddress.Text & """ WHERE config_key=""sellerBankInfo"""
+                    Globals.DB.executeNonQuery()
 
-        'Bank info
+                End If
+            Else
+                MsgBox(Globals.rm.GetString("msgNotEnoughData"))
 
-        If AccountNo.Text IsNot Nothing And BankAddress.Text IsNot Nothing Then
-            Globals.asSettings.Settings.Item("accountNo").Value = AccountNo.Text
-            Globals.asSettings.Settings.Item("bankAddress").Value = BankAddress.Text
-        End If
-        If rtbFooterText.Text <> "" Then
-            Globals.asSettings.Settings("footerText").Value = rtbFooterText.Text
-        Else
-            Globals.asSettings.Settings("footerText").Value = ""
-        End If
-        If Headline_info.Text <> "" Then
-            Globals.asSettings.Settings("headlineInfo").Value = Headline_info.Text
-        Else
-            Globals.asSettings.Settings("headlineInfo").Value = ""
-        End If
-        Globals.cAppConfig.Save(ConfigurationSaveMode.Modified)
-        MsgBox("Information updated")
-        Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message & vbCrLf & ex.StackTrace & vbCrLf & ex.Source)
+        End Try
     End Sub
 
     Private Sub FormLoads(sender As Object, e As EventArgs) Handles MyBase.Load
         setLanguage()
 
-
         ToolTip1.ToolTipTitle = Globals.rm.GetString("lbWarning")
-        ToolTip1.SetToolTip(lbPesel, Globals.rm.GetString("msgNotRequired"))
-        ToolTip1.SetToolTip(Pesel, Globals.rm.GetString("msgNotRequired"))
+        ToolTip1.SetToolTip(lbID, Globals.rm.GetString("msgNotRequired"))
+        ToolTip1.SetToolTip(txtID, Globals.rm.GetString("msgNotRequired"))
 
-        Headline_info.Text = Globals.asSettings.Settings.Item("headlineInfo").Value
+        'get all data from db
 
-        rtbFooterText.Text = Globals.asSettings.Settings.Item("footerText").Value
-
-        rtbSellerName.Text = Globals.asSettings.Settings.Item("sellerName").Value
-        Address_1.Text = Globals.asSettings.Settings.Item("address").Value
-        Address_2.Text = Globals.asSettings.Settings.Item("buildingNo").Value
-        Address_3.Text = Globals.asSettings.Settings.Item("city").Value
-        Address_4.Text = Globals.asSettings.Settings.Item("postalCode").Value
-        Phone.Text = Globals.asSettings.Settings.Item("phone").Value
-        Pesel.Text = Globals.asSettings.Settings.Item("pesel").Value
-
-        AccountNo.Text = Globals.asSettings.Settings.Item("accountNo").Value
-        BankAddress.Text = Globals.asSettings.Settings.Item("bankAddress").Value
     End Sub
 
     Private Sub Informations_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape Then Me.Close()
+    End Sub
+
+    Private Sub Informations_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing And fromNewDBWindow = True Then
+
+            'check all fields 
+            If Not checkFields() Then
+
+            End If
+
+            e.Cancel = True
+
+        End If
     End Sub
 End Class

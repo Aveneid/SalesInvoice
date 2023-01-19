@@ -7,7 +7,7 @@
     
     The primary goals of this format is to allow a simple XML format 
     that is mostly human readable. The generation and parsing of the 
-    various data types are done through the Typeconverter classes 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
     
     Example:
@@ -22,17 +22,17 @@
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
         <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
-    <data name="IDatabaseHelper.con1" type="System.Drawing.icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
                 
-    There are any number of "resheader" rows that DatabaseHelper.contain simple 
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
     
-    Each data row DatabaseHelper.contains a name, and value. The row also DatabaseHelper.contains a 
+    Each data row contains a name, and value. The row also contains a 
     type or mimetype. Type corresponds to a .NET class that support 
-    text/value DatabaseHelper.conversion through the Typeconverter architecture. 
+    text/value conversion through the TypeConverter architecture. 
     Classes that don't support this are serialized and stored with the 
     mimetype set.
     
@@ -56,7 +56,7 @@
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.Typeconverter
+            : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
@@ -360,8 +360,8 @@
   <data name="lbProgramName" xml:space="preserve">
     <value />
   </data>
-  <data name="msgDatabaseHelper.confirmation" xml:space="preserve">
-    <value>DatabaseHelper.confirmation</value>
+  <data name="msgconfirmation" xml:space="preserve">
+    <value>confirmation</value>
   </data>
   <data name="msgDatabaseCreatedSuccess" xml:space="preserve">
     <value>Database created successfully!</value>
@@ -432,7 +432,7 @@
   </data>
   <data name="lbIdInfo" xml:space="preserve">
     <value>This info is required for receipt to generate correctly.
-		Please fill this foGlobals.rm.
+		Please fill this form.
 		</value>
   </data>
   <data name="lbAddressNo" xml:space="preserve">
@@ -453,7 +453,7 @@
 You can change this info in Settings later.</value>
   </data>
   <data name="lbWizardEnding" xml:space="preserve">
-    <value>Great! We have DatabaseHelper.configured basic info.
+    <value>Great! We have configured basic info.
 	Remember, you can change all of this info in Settings
 	later.
 
@@ -476,8 +476,8 @@ You can change this info in Settings later.</value>
   <data name="msgNotRequired" xml:space="preserve">
     <value>Not required</value>
   </data>
-  <data name="msgNnotEnoughData" xml:space="preserve">
-    <value>Not enough data</value>
+  <data name="msgNotEnoughData" xml:space="preserve">
+    <value>Not enough data, please fill all fields.</value>
   </data>
   <data name="lbRaports" xml:space="preserve">
     <value>Raports</value>
@@ -563,7 +563,13 @@ You can change this info in Settings later.</value>
   <data name="msgFileError" xml:space="preserve">
     <value>Cannot perform action on file! Check if you have permissions or if file is locked.</value>
   </data>
-  <data name="msgAppDatabaseHelper.configError" xml:space="preserve">
-    <value>Application DatabaseHelper.config file is corrupted or not exists. Please reinstall program.</value>
+  <data name="msgAppconfigError" xml:space="preserve">
+    <value>Application config file is corrupted or not exists. Please reinstall program.</value>
+  </data>
+  <data name="msgFileExists" xml:space="preserve">
+    <value>File with this name already exists. Please choose different name.</value>
+  </data>
+  <data name="msgDatabaseConnectionError" xml:space="preserve">
+    <value>Cannot create connection to database!</value>
   </data>
 </root>

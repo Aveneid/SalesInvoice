@@ -1237,9 +1237,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Plik konfiguracyjny aplikacji jest uszkodzony lub nie istnieje. Przeinstaluj aplikację..
         '''</summary>
-        Friend Shared ReadOnly Property msgAppDatabaseHelper_configError() As String
+        Friend Shared ReadOnly Property msgAppconfigError() As String
             Get
-                Return ResourceManager.GetString("msgAppDatabaseHelper.configError", resourceCulture)
+                Return ResourceManager.GetString("msgAppconfigError", resourceCulture)
             End Get
         End Property
         
@@ -1249,6 +1249,24 @@ Namespace My.Resources
         Friend Shared ReadOnly Property msgCategoryDelError() As String
             Get
                 Return ResourceManager.GetString("msgCategoryDelError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Potwierdzenie.
+        '''</summary>
+        Friend Shared ReadOnly Property msgconfirmation() As String
+            Get
+                Return ResourceManager.GetString("msgconfirmation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Nie można otworzyć połączenia z bazą danych!.
+        '''</summary>
+        Friend Shared ReadOnly Property msgDatabaseConnectionError() As String
+            Get
+                Return ResourceManager.GetString("msgDatabaseConnectionError", resourceCulture)
             End Get
         End Property
         
@@ -1267,15 +1285,6 @@ Namespace My.Resources
         Friend Shared ReadOnly Property msgDatabaseError() As String
             Get
                 Return ResourceManager.GetString("msgDatabaseError", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Potwierdzenie.
-        '''</summary>
-        Friend Shared ReadOnly Property msgDatabaseHelper_confirmation() As String
-            Get
-                Return ResourceManager.GetString("msgDatabaseHelper.confirmation", resourceCulture)
             End Get
         End Property
         
@@ -1316,6 +1325,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Plik o tej nazwie już istnieje. Spróbuj inną nazwę..
+        '''</summary>
+        Friend Shared ReadOnly Property msgFileExists() As String
+            Get
+                Return ResourceManager.GetString("msgFileExists", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Wystąpił problem podczas wykonywania operacji..
         '''</summary>
         Friend Shared ReadOnly Property msgGeneralError() As String
@@ -1325,11 +1343,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Niewystarczające dane.
+        '''  Looks up a localized string similar to Niewystarczające dane, proszę uzupełnić wszystkie pola..
         '''</summary>
-        Friend Shared ReadOnly Property msgNnotEnoughData() As String
+        Friend Shared ReadOnly Property msgNotEnoughData() As String
             Get
-                Return ResourceManager.GetString("msgNnotEnoughData", resourceCulture)
+                Return ResourceManager.GetString("msgNotEnoughData", resourceCulture)
             End Get
         End Property
         

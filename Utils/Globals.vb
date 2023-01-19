@@ -4,12 +4,28 @@ Imports System.IO
 Imports System.IO.Compression
 Namespace Utils
     Public Class Globals
+        Public Shared DB = DatabaseHelper.getInstance()
 
         Public Shared cAppConfig As Configuration = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath)
         Public Shared asSettings As AppSettingsSection = cAppConfig.AppSettings
         Public Shared DBobjects = My.Resources.Database.ResourceManager
 
         Public Shared rm As Resources.ResourceManager
+
+        'singleton pattern - probably wont needed in future
+        'Private Shared objGlobals As Globals
+        'Private Sub New()
+
+        'End Sub
+
+        'Public Shared Function getInstance() As Globals
+        '    If objGlobals Is Nothing Then
+        '        objGlobals = New Globals
+        '    End If
+        '    Return objGlobals
+        'End Function
+
+
         Public Shared Function fileExists(path As String)
             Return System.IO.File.Exists(path)
         End Function

@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Baza danych jest integralną częścią programu. To w niej 
+przechowywane są wszystkie informacje.
+
+Program obsługuje kilka baz jednocześnie. Nowe bazy,
+jak i ich zmiana, dostępna jest w ustawieniach 
+programu.
+</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

@@ -2,9 +2,11 @@
 Imports System.Collections.Specialized
 Imports SalesInvoice.Utils
 Imports System.ComponentModel
+Imports System.Data.SqlServerCe
 
 Public Class FirstRunWizard
     Dim appClosing = False
+    Dim databaseName As String = ""
     Private Sub FirstRunWizard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Globals.reloadLanguage()
         setLanguage()
@@ -22,10 +24,10 @@ Public Class FirstRunWizard
         btnNext.Text = Globals.rm.GetString("lbNext")
 
         MenuLabel0.Text = Globals.rm.GetString("lbWelcome")
-        MenuLabel1.Text = Globals.rm.GetString("lbIdData")
-        MenuLabel2.Text = Globals.rm.GetString("lbHeadInfo")
-        MenuLabel3.Text = Globals.rm.GetString("lbBankInfo")
-        MenuLabel4.Text = Globals.rm.GetString("lbWizardEnd")
+        MenuLabel2.Text = Globals.rm.GetString("lbIdData")
+        MenuLabel3.Text = Globals.rm.GetString("lbHeadInfo")
+        MenuLabel4.Text = Globals.rm.GetString("lbBankInfo")
+        MenuLabel5.Text = Globals.rm.GetString("lbWizardEnd")
 
         TabPage1.Text = Globals.rm.GetString("lbWelcome")
         TabPage2.Text = Globals.rm.GetString("lbIdData")
@@ -41,11 +43,11 @@ Public Class FirstRunWizard
 
 
         lbAddress.Text = Globals.rm.GetString("lbAddress")
-        lbAddressNo.Text = Globals.rm.GetString("lbAddressNo")
+        ' lbAddressNo.Text = Globals.rm.GetString("lbAddressNo")
 
-        lbCity.Text = Globals.rm.GetString("lbCity")
+        'lbCity.Text = Globals.rm.GetString("lbCity")
 
-        lbPostal.Text = Globals.rm.GetString("lbPostal")
+        ' lbPostal.Text = Globals.rm.GetString("lbPostal")
         lbPhone.Text = Globals.rm.GetString("lbPhone")
 
         lbPesel.Text = Globals.rm.GetString("lbPESEL") & " (*)"
@@ -73,18 +75,85 @@ Public Class FirstRunWizard
         Me.Update()
     End Sub
 
+    Sub createDatabase()
+        Try
+            Dim connectionString = "Data Source=""" & Application.StartupPath & "\databases\" & txtDatabaseName.Text & ".sdf"""
+            Dim en = New SqlCeEngine(connectionString)
+
+            en.CreateDatabase()
+            Dim conTest = New SqlCeConnection("Data Source=""" & Application.StartupPath & "\databases\" & txtDatabaseName.Text & ".sdf""")
+            conTest.Open()
+            If conTest.State = ConnectionState.Open Then
+                Dim cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableCategories"), conTest)
+                cmdTest.ExecuteNonQuery()
+
+                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableClients"), conTest)
+                cmdTest.ExecuteNonQuery()
+                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableItems"), conTest)
+                cmdTest.ExecuteNonQuery()
+                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableReceipts"), conTest)
+                cmdTest.ExecuteNonQuery()
+                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableReceiptsDetails"), conTest)
+                cmdTest.ExecuteNonQuery()
+                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableUnits"), conTest)
+                cmdTest.ExecuteNonQuery()
+                cmdTest = New SqlCeCommand(Globals.DBobjects.getstring("tableConfig"), conTest)
+                cmdTest.ExecuteNonQuery()
+
+                Dim query As String() = Globals.DBobjects.getString("table_alters").Split(New Char() {";"c})
+
+                For Each w As String In query
+                    If w.Length > 0 Then
+                        cmdTest = New SqlCeCommand(w, conTest)
+                        cmdTest.ExecuteNonQuery()
+                    End If
+                Next
+
+                query = Globals.DBobjects.getstring("tableConfig_data").Split(New Char() {";"c})
+                For Each w As String In query
+                    If w.Length > 0 Then
+                        cmdTest = New SqlCeCommand(w, conTest)
+                        cmdTest.ExecuteNonQuery()
+                    End If
+                Next
+
+                cmdTest = New SqlCeCommand(Globals.DBobjects.getString("tableCategories_data"), conTest)
+                cmdTest.ExecuteNonQuery()
+
+                query = Globals.DBobjects.getString("tableUnits_data").Split(New Char() {";"c})
+
+                For Each w As String In query
+                    If w.Length > 0 Then
+                        cmdTest = New SqlCeCommand(w, conTest)
+                        cmdTest.ExecuteNonQuery()
+                    End If
+                Next
+
+
+                MessageBox.Show(Globals.rm.GetString("msgDatabaseCreatedSuccess"),
+                           "Info", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information)
+                conTest.Close()
+                databaseName = txtDatabaseName.Text
+            Else
+                MsgBox(Globals.rm.GetString("msgDatabaseConnectionError"))
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString())
+        End Try
+    End Sub
     Private Sub btnNext_click(sender As Object, e As EventArgs) Handles btnNext.Click
         If btnNext.Text = Globals.rm.GetString("lbNext") Then
             Select Case tbWizardCards.SelectedIndex
                 Case 1
-                    If SellerName.Text.Length = 0 Or Address_1.Text.Length = 0 Or
-                        Address_2.Text.Length = 0 Or Address_3.Text.Length = 0 Or
-                        Address_4.Text.Length = 0 Or Phone.Text.Length = 0 Then
+                    createDatabase()
+                Case 2
+                    If rtbSellerName.Text.Length = 0 Or rtbAddress.Text.Length = 0 Or txtPhone.Text.Length = 0 Then
                         MsgBox(Globals.rm.GetString("lbEnterAllData"))
                         Return
                     End If
-                Case 2
-                    If Headline_info.Text.Length = 0 Then
+                Case 3
+                    If rtbHeadlineInfo.Text.Length = 0 Then
                         MsgBox(Globals.rm.GetString("lbEnterAllData"))
                         Return
                     End If
@@ -96,24 +165,33 @@ Public Class FirstRunWizard
 
         ElseIf btnNext.Text = Globals.rm.GetString("lbEnd") Then
 
-            Globals.asSettings.Settings.Item("sellerName").Value = SellerName.Text
-            Globals.asSettings.Settings.Item("address").Value = Address_1.Text
-            Globals.asSettings.Settings.Item("buildingNo").Value = Address_2.Text
-            Globals.asSettings.Settings.Item("city").Value = Address_3.Text
-            Globals.asSettings.Settings.Item("postalCode").Value = Address_4.Text
-            Globals.asSettings.Settings.Item("phone").Value = Phone.Text
-            Globals.asSettings.Settings.Item("pesel").Value = Pesel.Text
+
+            'insert data into database
+            Dim conConfig = New SqlCeConnection("Data Source='" & Application.StartupPath & "\databases\" & txtDatabaseName.Text & ".sdf'")
+            conConfig.Open()
+
+            Dim cmdUpdate = New SqlCeCommand("UPDATE config SET config_value='" & rtbSellerName.Text & "' WHERE config_key='sellerName'", conConfig)
+            cmdUpdate.ExecuteNonQuery()
+            cmdUpdate = New SqlCeCommand("UPDATE config SET config_value='" & rtbAddress.Text & "' WHERE config_key='sellerAddress'", conConfig)
+            cmdUpdate.ExecuteNonQuery()
+            cmdUpdate = New SqlCeCommand("UPDATE config SET config_value='" & txtPhone.Text & "' WHERE config_key='sellerPhone'", conConfig)
+            cmdUpdate.ExecuteNonQuery()
+            cmdUpdate = New SqlCeCommand("UPDATE config SET config_value='" & txtPesel.Text & "' WHERE config_key='sellerID'", conConfig)
+            cmdUpdate.ExecuteNonQuery()
+
+            cmdUpdate = New SqlCeCommand("UPDATE config SET config_value='" & rtbHeadlineInfo.Text & "' WHERE config_key='sellerHeader'", conConfig)
+            cmdUpdate.ExecuteNonQuery()
+            cmdUpdate = New SqlCeCommand("UPDATE config SET config_value='" & rtbFooterText.Text & "' WHERE config_key='sellerFooter'", conConfig)
+            cmdUpdate.ExecuteNonQuery()
 
 
-            Globals.asSettings.Settings.Item("headlineInfo").Value = Headline_info.Text
-            Globals.asSettings.Settings.Item("footerText").Value = rtbFooterText.Text
-
-            'Globals.asSettings.Settings.Item("headlineInfoAligment").Value = ali
-
-            If AccountNo.Text IsNot Nothing And BankAddress.Text IsNot Nothing Then
-                Globals.asSettings.Settings.Item("accountNo").Value = AccountNo.Text
-                Globals.asSettings.Settings.Item("bankAddress").Value = BankAddress.Text
+            If txtAccountNo.Text IsNot Nothing And txtBankAddress.Text IsNot Nothing Then
+                cmdUpdate = New SqlCeCommand("UPDATE config SET config_value='" & txtAccountNo.Text & "' WHERE config_key='sellerAccountNo'", conConfig)
+                cmdUpdate.ExecuteNonQuery()
+                cmdUpdate = New SqlCeCommand("UPDATE config SET config_value='" & txtBankAddress.Text & "' WHERE config_key='sellerBankInfo'", conConfig)
+                cmdUpdate.ExecuteNonQuery()
             End If
+
             Globals.asSettings.Settings.Item("firsttimerun").Value = "false"
             Globals.cAppConfig.Save(ConfigurationSaveMode.Modified)
             appClosing = True
@@ -143,6 +221,8 @@ Public Class FirstRunWizard
         MenuLabel2.Font = New Font(MenuLabel2.Font, FontStyle.Regular)
         MenuLabel3.Font = New Font(MenuLabel3.Font, FontStyle.Regular)
         MenuLabel4.Font = New Font(MenuLabel4.Font, FontStyle.Regular)
+        MenuLabel5.Font = New Font(MenuLabel5.Font, FontStyle.Regular)
+
         Select Case tbWizardCards.SelectedIndex()
             Case 0
                 MenuLabel0.Font = New Font(MenuLabel0.Font, FontStyle.Bold)
@@ -154,6 +234,8 @@ Public Class FirstRunWizard
                 MenuLabel3.Font = New Font(MenuLabel3.Font, FontStyle.Bold)
             Case 4
                 MenuLabel4.Font = New Font(MenuLabel4.Font, FontStyle.Bold)
+            Case 5
+                MenuLabel5.Font = New Font(MenuLabel5.Font, FontStyle.Bold)
         End Select
         Me.Text = Globals.rm.GetString("lbFisrtRun") & " - " & tbWizardCards.SelectedTab.Text
     End Sub
@@ -192,7 +274,7 @@ Public Class FirstRunWizard
     End Sub
 
 
-    Private Sub Phone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Phone.KeyPress
+    Private Sub Phone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhone.KeyPress
         If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then e.KeyChar = ""
     End Sub
 

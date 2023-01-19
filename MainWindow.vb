@@ -1,8 +1,5 @@
 ﻿Imports SalesInvoice.Utils
-Imports System.Data.SqlClient
 Imports System.Globalization
-Imports System.Resources
-Imports System.Threading
 Imports System.IO
 Imports System.GC
 Imports System.Data.SqlServerCe
@@ -11,11 +8,11 @@ Public Class MainWindow
 
     Dim prevLang As String
     Private Property CultureInfo As CultureInfo
+    Public Globals As Globals
 
     Sub OpenDatabase()
         Try
-            DatabaseHelper.con = New SqlCeConnection("Data Source=""" & Application.StartupPath & "\databases\" & DatabaseHelper.currentDatabase & """")
-            DatabaseHelper.con.Open()
+            Globals.DB.checkDbConnection()
         Catch ex As Exception
             MsgBox(Globals.rm.GetString("msgGeneralError") & vbNewLine & Globals.rm.GetString("msgDatabaseError"))
             Application.Exit()
@@ -42,20 +39,21 @@ Public Class MainWindow
     Sub OpenRecent(sender As Object, e As EventArgs)
         Dim btn = DirectCast(sender, RibbonOrbRecentItem)
         Dim print As New PrintingWindow
-        print.PdfViewer1.LoadFromFile(Application.StartupPath & "\receipts\" & btn.Text)
+        'print.PdfViewer1.LoadFromFile(Application.StartupPath & "\receipts\" & btn.Text)
         print.ShowDialog()
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         prevLang = Globals.asSettings.Settings.Item("lang").Value
         'Me.Text = "Records of the sale of undeclared activities - " & DatabaseHelper.currentDatabase & " - Sales "
-        Me.Text = Globals.rm.GetString("titleMain") & " - " & DatabaseHelper.currentDatabase & " - " & Globals.rm.GetString("titleSales")
+        Me.Text = Globals.rm.GetString("titleMain") & " - " & Globals.DB.currentDatabase & " - " & Globals.rm.GetString("titleSales")
         Me.CenterToScreen()
         checkAllSettings()
         setLanguage()
         loadRecents()
+
     End Sub
     Public Sub setLanguage()
-        Me.Text = Globals.rm.GetString("titleMain") & " - " & DatabaseHelper.currentDatabase & " - " & Globals.rm.GetString("titleSales")
+        Me.Text = Globals.rm.GetString("titleMain") & " - " & Globals.DB.currentDatabase & " - " & Globals.rm.GetString("titleSales")
         RibbonMainTab.Text = Globals.rm.GetString("lbMainTab")
 
         RibbonNewPanel.Text = Globals.rm.GetString("lbNew")
@@ -93,8 +91,7 @@ Public Class MainWindow
     End Sub
     Sub updateconnection()
         Try
-            DatabaseHelper.con = New SqlCeConnection("Data Source=""" & Application.StartupPath & ".\databases\" & DatabaseHelper.currentDatabase & """")
-            DatabaseHelper.con.Open()
+
         Catch ex As Exception
             MsgBox(Globals.rm.GetString("msgGeneralError") & vbNewLine & Globals.rm.GetString("msgDatabaseError"))
             Application.Exit()
@@ -109,11 +106,9 @@ Public Class MainWindow
     Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripStatusLabel1.Click
         Dim id = MainGridView.CurrentRow.Cells("id").Value
 
-        DatabaseHelper.cmd = New SqlCeCommand("DELETE FROM " & DatabaseHelper.currentSet & " WHERE id= " & id, DatabaseHelper.con)
-        If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-        DatabaseHelper.cmd.ExecuteNonQuery()
+        Globals.DB.cmd = "DELETE FROM " & Globals.DB.currentSet & " WHERE id= " & id
+        Globals.DB.executeNonQuery()
         updateDataView()
-        DatabaseHelper.con.Close()
     End Sub
 
     Private Sub RibbonOrbMenuItem4_Click(sender As Object, e As EventArgs) Handles RibbonExitBtn.Click
@@ -121,13 +116,13 @@ Public Class MainWindow
     End Sub
 
     Private Sub RibbonButton1_Click(sender As Object, e As EventArgs) Handles RibbonSettingsBtn.Click
-        Dim old = DatabaseHelper.currentDatabase
+        Dim old = Globals.DB.currentDatabase
         OptionsAndDatabaseWindow.StartPosition = FormStartPosition.CenterParent
         OptionsAndDatabaseWindow.ShowDialog(Me)
-        If Not old.ToString.Equals(DatabaseHelper.currentDatabase.ToString) Then
+        If Not old.ToString.Equals(Globals.DB.currentDatabase) Then
             MainGridView.DataSource = Nothing
             MainGridView.Rows.Clear()
-            Me.Text = Globals.rm.GetString("titleMain") & " - " & DatabaseHelper.currentDatabase & " - " & Globals.rm.GetString("titleSales")
+            Me.Text = Globals.rm.GetString("titleMain") & " - " & Globals.DB.currentDatabase & " - " & Globals.rm.GetString("titleSales")
             updateconnection()
         End If
     End Sub
@@ -136,9 +131,9 @@ Public Class MainWindow
     End Sub
 
     Private Sub RibbonButton11_Click(sender As Object, e As EventArgs) Handles ShowItemsBtn.Click
-        DatabaseHelper.currentSet = "items"
+        Globals.DB.currentSet = "items"
         'DatabaseHelper.cmd = New SqlCeCommand("select items.id,name,code,category_name,service,amount,price from items inner join items_categories on items.category = items_categories.id", DatabaseHelper.con)
-        DatabaseHelper.cmd = New SqlCeCommand("SELECT items.id,items.name,items.price,categories.name from items inner join categories on items.category = categories.id", DatabaseHelper.con)
+        Globals.DB.cmd = "SELECT items.id,items.name,items.price,categories.name from items inner join categories on items.category = categories.id"
         updateDataView()
 
         MainGridView.Columns(0).HeaderText = Globals.rm.GetString("lbCode")
@@ -152,8 +147,8 @@ Public Class MainWindow
 
     End Sub
     Private Sub ShowReceiptsBtn_Click(sender As Object, e As EventArgs) Handles ShowReceiptsBtn.Click
-        DatabaseHelper.currentSet = "receipts"
-        DatabaseHelper.cmd = New SqlCeCommand("select clients.name,receipt_id,date from receipts inner join clients on clients.id = receipts.client_id", DatabaseHelper.con)
+        Globals.DB.currentSet = "receipts"
+        Globals.DB.cmd = "select clients.name,receipt_id,date from receipts inner join clients on clients.id = receipts.client_id"
         updateDataView()
 
         MainGridView.Columns(0).HeaderText = Globals.rm.GetString("lbClient")
@@ -163,8 +158,8 @@ Public Class MainWindow
 
     End Sub
     Private Sub ShowClientsBtn_Click(sender As Object, e As EventArgs) Handles ShowClientsBtn.Click
-        DatabaseHelper.currentSet = "clients"
-        DatabaseHelper.cmd = New SqlCeCommand("select id,name,phone,identificator from Clients", DatabaseHelper.con)
+        Globals.DB.currentSet = "clients"
+        Globals.DB.cmd = "select id,name,phone,identificator from Clients"
         updateDataView()
 
         MainGridView.Columns(0).HeaderText = Globals.rm.GetString("lbID")
@@ -180,67 +175,43 @@ Public Class MainWindow
     End Sub
     Sub updateDataView()
 
-        Select Case DatabaseHelper.currentSet
+        Select Case Globals.DB.currentSet
             Case "items"
-                DatabaseHelper.cmd = New SqlCeCommand("SELECT items.id,items.name,items.price,categories.name from items inner join categories on items.category = categories.id", DatabaseHelper.con)
+                Globals.DB.cmd = "SELECT items.id,items.name,items.price,categories.name from items inner join categories on items.category = categories.id"
             Case "clients"
-                DatabaseHelper.cmd = New SqlCeCommand("select id,name,phone,identificator from Clients", DatabaseHelper.con)
+                Globals.DB.cmd = "select id,name,phone,identificator from Clients"
             Case "receipts"
-                DatabaseHelper.cmd = New SqlCeCommand("select clients.name,receipt_id,ddate from receipts inner join clients on clients.id = receipts.client_id", DatabaseHelper.con)
+                Globals.DB.cmd = "select clients.name,receipt_id,ddate from receipts inner join clients on clients.id = receipts.client_id"
         End Select
-        If DatabaseHelper.con.State = ConnectionState.Closed Then DatabaseHelper.con.Open()
-        DatabaseHelper.cmd.ExecuteNonQuery()
 
-        DatabaseHelper.myDA = New SqlCeDataAdapter(DatabaseHelper.cmd)
-        DatabaseHelper.myDataSet = New DataSet()
+        MainGridView.DataSource = Globals.DB.getDataSet()
 
-        DatabaseHelper.myDA.Fill(DatabaseHelper.myDataSet, DatabaseHelper.currentSet)
-        MainGridView.DataSource = DatabaseHelper.myDataSet.Tables(DatabaseHelper.currentSet).DefaultView
-
-        DatabaseHelper.con.Close()
         MainGridView.Focus()
     End Sub
     Private Sub RibbonButton6_Click(sender As Object, e As EventArgs) Handles RibbonInfoBtn.Click
         Informations.ShowDialog()
     End Sub
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainGridView.CellDoubleClick
-        If DatabaseHelper.currentSet = "receipts" Then
-            'currentSet = "receipts_data"
+        Select Case Globals.DB.currentSet
+            Case "receipts"
 
-            AddReceiptWindow.ShowDialog()
-            AddReceiptWindow.Text = Globals.rm.GetString("lbReceipt") & MainGridView.CurrentRow.Cells(1).Value & " - " & MainGridView.CurrentRow.Cells(0).Value
-            AddReceiptWindow.prepareData(MainGridView.CurrentRow.Cells(0).Value, MainGridView.CurrentRow.Cells(1).Value)
+                AddReceiptWindow.ShowDialog()
+                AddReceiptWindow.Text = Globals.rm.GetString("lbReceipt") & MainGridView.CurrentRow.Cells(1).Value & " - " & MainGridView.CurrentRow.Cells(0).Value
+                AddReceiptWindow.prepareData(MainGridView.CurrentRow.Cells(0).Value, MainGridView.CurrentRow.Cells(1).Value)
 
-            'Dim index As String = MainGridView.CurrentRow.Cells(1).Value
-            'Dim client As String = MainGridView.CurrentRow.Cells(0).Value
-            'DatabaseHelper.cmd = New SqlCeCommand("SELECT  items.name, receipts_data.amount, units.name, items.price, items.price * receipts_data.amount AS suma " & _
-            '                        "FROM receipts_data " & _
-            '                        "INNER JOIN items ON items.id = receipts_data.code " & _
-            '                        "INNER JOIN units ON items.unit = units.id " & _
-            '                        "WHERE receipts_data.receipt_id = '" & index & "' ", DatabaseHelper.con)
-
-            'updateDataView()
-            'MainGridView.Columns(0).HeaderText = Globals.rm.GetString("lbItemName")
-            'MainGridView.Columns(1).HeaderText = Globals.rm.GetString("lbAmount")
-            'MainGridView.Columns(2).HeaderText = Globals.rm.GetString("lbUnit")
-            'MainGridView.Columns(3).HeaderText = Globals.rm.GetString("lbPrice")
-            'MainGridView.Columns(4).HeaderText = Globals.rm.GetString("lbCost")
-            'DatabaseHelper.con.Close()
-        End If
-        If DatabaseHelper.currentSet = "items" Then
-            If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
-                Dim selectedRow = MainGridView.Rows(e.RowIndex)
-                Dim itemDetails As New ItemDetails(selectedRow.Cells(0).Value)
-                itemDetails.ShowDialog()
-            End If
-        End If
-        If DatabaseHelper.currentSet = "clients" Then
-            If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
-                Dim selectedRow = MainGridView.Rows(e.RowIndex)
-                Dim clientDetails As New ClientDetails(selectedRow.Cells(0).Value)
-                clientDetails.ShowDialog()
-            End If
-        End If
+            Case "items"
+                If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+                        Dim selectedRow = MainGridView.Rows(e.RowIndex)
+                        Dim itemDetails As New ItemDetails(selectedRow.Cells(0).Value)
+                        itemDetails.ShowDialog()
+                    End If
+            Case "clients"
+                If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+                    Dim selectedRow = MainGridView.Rows(e.RowIndex)
+                    Dim clientDetails As New ClientDetails(selectedRow.Cells(0).Value)
+                    clientDetails.ShowDialog()
+                End If
+        End Select
     End Sub
     Private Sub RibbonOrbMenuItem2_Click(sender As Object, e As EventArgs)
         FirstRunWizard.Show()
@@ -273,10 +244,6 @@ Public Class MainWindow
         e.Graphics.DrawString(rowNumber, dg.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
     End Sub
 
-    Private Sub MainWindow_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        OpenDatabase()
-    End Sub
-
     Private Sub repRange_Click(sender As Object, e As EventArgs) Handles repRange.Click
         Using chooseDate = New ReportsRange
             If DialogResult.OK = chooseDate.ShowDialog() Then
@@ -303,7 +270,7 @@ Public Class MainWindow
 
     Private Sub MainGridView_MouseDown(sender As Object, e As MouseEventArgs) Handles MainGridView.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Right Then
-            If DatabaseHelper.currentSet = "receipts" Then
+            If Globals.DB.currentSet = "receipts" Then
                 Dim hit As DataGridView.HitTestInfo = MainGridView.HitTest(e.X, e.Y)
                 MainGridView.CurrentCell = MainGridView.Rows(hit.RowIndex).Cells(1)
                 Dim printBtn As New ToolStripMenuItem()
@@ -325,7 +292,6 @@ Public Class MainWindow
     End Sub
 
     Private Sub MainWindow_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        DatabaseHelper.con.Close()
         Me.Dispose()
         Application.Exit()
     End Sub
